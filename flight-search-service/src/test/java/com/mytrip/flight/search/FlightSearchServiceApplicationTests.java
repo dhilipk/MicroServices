@@ -1,4 +1,4 @@
-package com.mytrip.flight.information;
+package com.mytrip.flight.search;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class FlightInformationServiceApplicationTests {
+public class FlightSearchServiceApplicationTests {
 
 	@Test
 	public void contextLoads() {
