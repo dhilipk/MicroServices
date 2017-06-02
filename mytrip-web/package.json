@@ -1,0 +1,26 @@
+{
+  "name": "mytrip-web",
+  "version": "0.1.0",
+  "description": "Flight Booking application within Kraken JS",
+  "author": "dhilipk",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test",
+    "build": "grunt build",
+    "all": "npm run build && npm run test"
+  },
+  "dependencies": {
+    "kraken-js": "^2.0.0",
+    "construx": "^1.0.0",
+    "makara": "^2.0.3",
+    "dust-makara-helpers": "^4.1.2",
+    "construx-copier": "^1.0.0",
+    "express": "^4.12.2"
+  },
+  "devDependencies": {
+    "construx-dustjs": "^1.1.0",
+    "construx-less": "^1.0.0",
+    "mocha": "^1.18.0",
+    "supertest": "^0.9.0"
+  }
+}
