@@ -28,7 +28,7 @@ public class DestinationCityMapping extends AbstractPersistable<Long> {
 	@ManyToOne
 	private City destinationCity;
 
-	private DestinationCityMapping() {}
+	public DestinationCityMapping() {}
 
 	public DestinationCityMapping(City originCity, City destinationCity) {
 		super();

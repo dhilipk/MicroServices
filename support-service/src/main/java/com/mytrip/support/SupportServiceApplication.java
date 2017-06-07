@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 
 import com.mytrip.support.entity.City;
@@ -16,6 +17,7 @@ import com.mytrip.support.enums.CityCategory;
 import com.mytrip.support.repository.CityRepository;
 import com.mytrip.support.repository.DestinationCityMappingRepository;
 
+@EnableDiscoveryClient
 @SpringBootApplication
 public class SupportServiceApplication {
 
