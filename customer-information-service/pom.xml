@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.mytrip.flight</groupId>
-	<artifactId>user-information-service</artifactId>
+	<artifactId>customer-information-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>user-information-service</name>
+	<name>customer-information-service</name>
 	<description>User information for the logged-in users within MyTrip</description>
 
 	<parent>
