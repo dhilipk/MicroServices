@@ -1,7 +1,5 @@
 package com.mytrip.flight.search.entity;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,11 +18,11 @@ public class Flight {
 	private String flightNumber;
 	private String originCityCode;
 	private String destinationCityCode;
-	private Date flightDate;
+	private String flightDate;
 
 	public Flight() {}
 
-	public Flight(String flightNumber, String originCityCode, String destinationCityCode, Date flightDate) {
+	public Flight(String flightNumber, String originCityCode, String destinationCityCode, String flightDate) {
 		super();
 		this.flightNumber = flightNumber;
 		this.originCityCode = originCityCode;

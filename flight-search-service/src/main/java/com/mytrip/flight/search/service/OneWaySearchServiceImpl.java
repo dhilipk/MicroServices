@@ -1,5 +1,6 @@
 package com.mytrip.flight.search.service;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -25,6 +26,6 @@ public class OneWaySearchServiceImpl implements OneWaySearchService {
 
 	public List<Flight> search(SearchCriteria query) {
 		logger.debug("search Call : " + query);
-		return flightRepository.findByOriginCityAndDestinationCityAndFlightDate(query.getOriginCity(), query.getDestinationCity(), query.getTravelDate());
+		return flightRepository.findByOriginCityCodeAndDestinationCityCodeAndFlightDate(query.getOriginCity(), query.getDestinationCity(), query.getTravelDate());
 	}
 }

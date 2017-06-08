@@ -8,5 +8,5 @@ import com.mytrip.flight.search.entity.Flight;
 
 public interface FlightRepository extends CrudRepository<Flight, Long> {
 
-	List<Flight> findByOriginCityAndDestinationCityAndFlightDate(String originCity, String destinationCity, String flightDate);
+    List<Flight> findByOriginCityCodeAndDestinationCityCodeAndFlightDate(String originCityCode, String destinationCityCode, String flightDate);
 }
