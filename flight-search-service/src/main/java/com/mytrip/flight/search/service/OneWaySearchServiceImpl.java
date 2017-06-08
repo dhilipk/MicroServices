@@ -24,6 +24,7 @@ public class OneWaySearchServiceImpl implements OneWaySearchService {
 	
 
 	public List<Flight> search(SearchCriteria query) {
+		logger.debug("search Call : " + query);
 		return flightRepository.findByOriginCityAndDestinationCityAndFlightDate(query.getOriginCity(), query.getDestinationCity(), query.getTravelDate());
 	}
 }
