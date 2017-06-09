@@ -1,5 +1,5 @@
 # MicroServices - MyTrip Application
-This repository provides all the features which which has been fragmented into each of the microservices. B
+This repository provides all the features which which has been fragmented into each of the microservices.
 
 ## Pre-Requisites
 1. JDK 1.8
