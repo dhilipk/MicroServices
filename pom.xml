@@ -9,12 +9,22 @@
     <packaging>pom</packaging>
   
     <modules>
+        <module>common-config</module>
+        <module>customer-authentication-service</module>
+        <module>customer-dispute-service</module>
+        <module>customer-information-service</module>
+        <module>customer-notification-service</module>
+        <module>flight-checkin-service</module>
         <module>flight-fare-service</module>
         <module>flight-search-service</module>
-		<module>mytrip-web</module>
-		<module>support-service</module>
-		<module>travel-schedule-service</module>
-		<module>common-config</module>
+        <module>flight-seatmap-service</module>
+        <module>flight-status-service</module>
+        <module>mytrip-activity-service</module>
+        <module>mytrip-registry-service</module>
+        <module>payment-service</module>
+        <module>support-service</module>
+        <module>travel-reissue-service</module>
+        <module>travel-schedule-service</module>
     </modules>
     <properties>
         <org.lombok.version>1.16.16</org.lombok.version>
