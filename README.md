@@ -15,10 +15,19 @@ This repository provides all the features which which has been fragmented into e
 - clone https://github.com/dhilipk/MicroServices.git
 - cd ../MicroServices
 - mvn clean install
+- cd mytrip-registry-service
+- java -jar target/mytrip-registry-service-0.0.1-SNAPSHOT.jar
+- cd ../flight-search-service
+- java -jar target/flight-search-service-0.0.1-SNAPSHOT.jar
+- cd ../flight-fare-service
+- java -jar target/flight-fare-service-0.0.1-SNAPSHOT.jar
+- cd ../customer-information-service
+- java -jar target/customer-information-service-0.0.1-SNAPSHOT.jar
 - cd mytrip-web
 - npm install
 - grunt build
 - npm start
+- Open a browser and try to access http://localhost:8001/
 
 ## Services Requirement
 
