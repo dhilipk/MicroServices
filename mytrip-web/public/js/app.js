@@ -1,20 +1,15 @@
 /*global requirejs:true*/
 'use strict';
 
+require(['config'/* Dependencies */], function (config) {
 
-requirejs.config({
-    paths: {}
-});
+    require(['jquery', 'router'], function($, Router) {
+        var app = {
+            initialize: function () {
+                var router = new Router();
+            }
+        };
 
-
-require([/* Dependencies */], function () {
-
-    var app = {
-        initialize: function () {
-            // Your code here
-        }
-    };
-
-    app.initialize();
-
+        app.initialize();
+    });
 });
