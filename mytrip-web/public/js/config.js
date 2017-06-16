@@ -1,6 +1,14 @@
 'use strict';
-
+/**
+ * Entry point of this application which gets injected from master.dust.
+ *
+ * Configures the paths to the libraries in use.
+ * Shim configuration, which is used to configure dependencies, exports and custom for older traditional
+ * browser globals.
+ * Initializes application.
+ */
 requirejs.config({
+    deps: ['app'],
     baseUrl: '/js',
     paths: {
         backbone: '../components/backbone/backbone-min',
