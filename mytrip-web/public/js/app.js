@@ -1,10 +1,6 @@
-/*global requirejs:true*/
-
 'use strict';
 
-define(['jquery',
-         'backbone',
-         'router'/* Dependencies */
+define(['jquery', 'backbone', 'router'/* Dependencies */
 ], function ($, Backbone, Router) {
     $(document).ready(function () {
         console.log('Backbone application loaded');

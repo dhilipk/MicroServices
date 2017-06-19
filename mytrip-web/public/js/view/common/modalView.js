@@ -6,9 +6,9 @@
  * template - inner content of the modal (MANDATORY).
  * data - The data with which the template will be rendered (MANDATORY).
  */
-define([
+define(['jquery',
     'backbone'
-], function(Backbone) {
+], function($, Backbone) {
     var ModalView = Backbone.View.extend({
 
         el: '#mytrip-common-modal-base',

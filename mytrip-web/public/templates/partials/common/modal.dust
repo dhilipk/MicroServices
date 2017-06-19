@@ -1,0 +1,6 @@
+<div class="modal fade" id="mytrip-common-modal-base">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>

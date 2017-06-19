@@ -1,24 +1,33 @@
 'use strict';
 
-define(['jquery', 'backbone', 'landingView'], function($, Backbone, LandingView) {
+define(['jquery', 'backbone', 'landing'
+], function($, Backbone, landing) {
     
     var Router = Backbone.Router.extend({
         routes: {
-            '': 'renderApplication'
+            '': 'renderApplication',
+            'about': 'showAbout'
+        },
+
+        /**
+         * Important setup to start using the router.
+         */
+        initialize: function () {
+            console.log("Initialize application");
+            landing();
         },
 
         renderApplication: function() {
-
-            var AboutView = LandingView.extend({
+            /*var AboutView = landing.extend({
                 el          :   '#dynaSection',
                 template    :   'about'
             });
 
             var aboutView = new AboutView();
-            aboutView.render();
+            aboutView.render();*/
         }
 
     });
 
     return Router;
-})
+});

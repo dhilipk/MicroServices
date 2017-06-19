@@ -14,7 +14,8 @@ requirejs.config({
         backbone: '../components/backbone/backbone-min',
         jquery: '../components/jquery/jquery-3.2.1.min',
         underscore: '../components/underscore/underscore-min',
-        dust: '../components/dustjs-linkedin/dist/dust-full.min'
+        dust: '../components/dustjs-linkedin/dist/dust-full.min',
+        handlebars: '../components/handlebars/handlebars-v2.0.0'
     },
     shim: {
         backbone: {

@@ -20,6 +20,18 @@
   "devDependencies": {
     "construx-dustjs": "^1.1.0",
     "construx-less": "^1.0.0",
+    "grunt": "^1.0.1",
+    "grunt-config-dir": "^0.3.2",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-contrib-requirejs": "^1.0.0",
+    "grunt-copy-browser-modules": "^6.0.0",
+    "grunt-copy-to": "0.0.12",
+    "grunt-dustjs": "^1.4.0",
+    "grunt-eslint": "^20.0.0",
+    "grunt-makara-amdify": "^1.0.1",
+    "grunt-mocha-cli": "^3.0.0",
     "mocha": "^1.18.0",
     "supertest": "^0.9.0"
   }
