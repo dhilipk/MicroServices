@@ -18,6 +18,7 @@ define(['jquery', 'backbone', 'landing'
         },
 
         renderApplication: function() {
+            console.log("renderApplication");
             /*var AboutView = landing.extend({
                 el          :   '#dynaSection',
                 template    :   'about'

@@ -1,5 +1,38 @@
 {>"layouts/master" /}
 
-{<body}
+<div id="mytrip-landing-page-text" class="pull-left">
     <h1>{@pre type="content" key="greeting"/}</h1>
-{/body}
+    <div id="mytrip-flight-search" class="pull-left">
+        <div class="hp-widget-top">
+            <h1>
+                Book <a href="/flights">Domestic</a> and 
+                <a href="/international-flights">International</a> flights </br>
+                <input id="switch_input_1" class="switchBTN_toogle" type="radio" name="widgetOption" value="true">
+                one way
+                <input id="switch_input_2" class="switchBTN_toogle" checked="checked" type="radio" name="widgetOption" value="false">
+                round trip
+            </h1>
+            <div>
+            <div id="flight-search-leaving-from" class="dropdown" width="20%">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Leaving From...
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                <li><a href="#">Chennai (MAA)</a></li>
+                <li><a href="#">Pune (PNQ)</a></li>
+                <li><a href="#">Mumbai (BOM)</a></li>
+                </ul>
+            </div>
+            <div id="flight-search-leaving-to" class="dropdown" width="20%">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Leaving To...
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                <li><a href="#">Chennai (MAA)</a></li>
+                <li><a href="#">Pune (PNQ)</a></li>
+                <li><a href="#">Mumbai (BOM)</a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+    </div>
+</div>
