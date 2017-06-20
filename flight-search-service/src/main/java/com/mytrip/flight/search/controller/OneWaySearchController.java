@@ -39,7 +39,7 @@ public class OneWaySearchController {
     @Autowired
     private OneWaySearchService oneWaySearchService;
 
-    @RequestMapping(path = "/search/flights", method = RequestMethod.GET, 
+    @RequestMapping(path = "/search/flights", method = RequestMethod.POST, 
             consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<FlightVo> search(@RequestBody SearchCriteria criteria) {
         LOGGER.debug(criteria.toString());

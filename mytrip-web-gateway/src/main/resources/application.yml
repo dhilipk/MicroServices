@@ -1,0 +1,27 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: zuul-server
+
+#Eureka Configuration
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8099/eureka
+
+#ZUUL Configuration
+zuul:
+  prefix: /api
+  routes:
+    flight-fare-service:
+      path: /flight-fare-service/**
+      url: http://localhost:8086
+      service-id: FLIGHT-FARE-SERVICE
+    support-service:
+      path: /support-service/**
+      url: http://localhost:8092
+      service-id: SUPPORT-SERVICE
+    static:
+      path: /static/**
