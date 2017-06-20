@@ -9,7 +9,7 @@ This repository provides all the features which which has been fragmented into e
 5. grunt-cli v1.2.0
 5. sts-3.8.4 or Eclipse IDE
 
-## Running
+## Getting Started
 
 - Make sure you have all the pre-requisites installed.
 - clone https://github.com/dhilipk/MicroServices.git
@@ -36,6 +36,18 @@ This repository provides all the features which which has been fragmented into e
 ### flight-fare-service
 ### customer-information-service
 ### mytrip-web
+A Node.js web application framework.
+
+#### Directory structure
+
+- **/config** - Application and middleware configuration
+- **/controllers** - Controllers
+- **/lib** - Custom developer libraries and other code
+- **/locales** - Local-based content
+- **/models** - Models
+- **/public** - Web resources that are publicly available
+- **/public/templates** - Server and browser-side templates
+- **/tests** - Unit and functional test cases
      ____                     __      __
     /\  _`\                  /\ \    /\ \                                   __
     \ \ \ \ \     __      ___\ \ \/'\\ \ \____    ___     ___      __      /\_\    ____
