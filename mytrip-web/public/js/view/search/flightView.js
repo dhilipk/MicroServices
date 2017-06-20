@@ -22,7 +22,7 @@ define([
         },
 
         show: function () {
-            console.log("show function" + this.template());
+            console.log("show function " + this.template());
             if (this.template() !== '') {
                 ModalView.prototype.show.call(this);
             }

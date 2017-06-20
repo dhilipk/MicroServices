@@ -10,12 +10,14 @@
     "all": "npm run build && npm run test"
   },
   "dependencies": {
-    "kraken-js": "^2.0.0",
+    "bluebird": "^2.9.6",
     "construx": "^1.0.0",
-    "makara": "^2.0.3",
-    "dust-makara-helpers": "^4.1.2",
     "construx-copier": "^1.0.0",
-    "express": "^4.12.2"
+    "dust-makara-helpers": "^4.1.2",
+    "express": "^4.12.2",
+    "kraken-js": "^2.0.0",
+    "makara": "^2.0.3",
+    "node-rest-client": "^3.1.0"
   },
   "devDependencies": {
     "construx-dustjs": "^1.1.0",
