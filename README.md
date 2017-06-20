@@ -30,6 +30,13 @@ This repository provides all the features which which has been fragmented into e
 - Open a browser and try to access http://localhost:8001/
 
 ## Services Requirement
+### mytrip-web-gateway
+Zuul API gateway integrated into spring cloud:
+- Service auto registration via eureka
+- Service registration by address
+- Service registration by service ID
+- Filters (logging, authentication)
+- Serving static content
 
 ### mytrip-registry-service
 ### flight-search-service
@@ -48,6 +55,7 @@ A Node.js web application framework.
 - **/public** - Web resources that are publicly available
 - **/public/templates** - Server and browser-side templates
 - **/tests** - Unit and functional test cases
+-
      ____                     __      __
     /\  _`\                  /\ \    /\ \                                   __
     \ \ \ \ \     __      ___\ \ \/'\\ \ \____    ___     ___      __      /\_\    ____
@@ -59,6 +67,5 @@ A Node.js web application framework.
                                                                             \/___/
     (_'_______________________________________________________________________________'_)
     (_.———————————————————————————————————————————————————————————————————————————————._)
-
 
 Backbone supplies structure to JavaScript-heavy applications by providing models with key-value binding and custom events, collections with a rich API of enumerable functions, views with declarative event handling, and connects it all to your existing application over a RESTful JSON interface.
