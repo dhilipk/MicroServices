@@ -32,9 +32,9 @@ This repository provides all the features which which has been fragmented into e
 ## Common Definitions
 
 ### Ribbon Components for load balancing
-Rule - a logic component to determine which server to return from a list
-Ping - a component running in background to ensure liveness of servers
-ServerList - this can be static or dynamic. If it is dynamic (as used by DynamicServerListLoadBalancer), a background thread will refresh and filter the list at certain interval
+- Rule -> a logic component to determine which server to return from a list (AvailabilityFilteringRule, RoundRobinRule, WeightedResponseTimeRule)
+- Ping -> a component running in background to ensure liveness of servers
+- ServerList -> this can be static or dynamic. If it is dynamic (as used by DynamicServerListLoadBalancer), a background thread will refresh and filter the list at certain interval using ServerListRefreshInterval. If it is static, list of load balancing ip address will be provided within listOfServers.
 
 ### Zuul Main features
 - Provides a unified access to multiple different microservices
@@ -44,6 +44,8 @@ ServerList - this can be static or dynamic. If it is dynamic (as used by Dynamic
 - Restricts access to internal only services
 - Looks up services from Eureka
 - Implements filters for authentication or logging purposes
+
+Zuul / Consul has multiple components, but as a whole, it is a tool for discovering and configuring services in your infrastructure.
 
 ## Services Implementation
 
