@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: flight-search-service
+
+server:
+  port: 8087
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8099/eureka
+
+#If the eureka ribbon configuration is enabled, then we dont need the list of servers instead it will take the instance using service registry
+flight-fare-service:
+  ribbon:
+    eureka:
+      enabled: false
+    listOfServers: localhost:8086
+    ServerListRefreshInterval: 60000
+
+logging:
+  level:
+    com:
+      mytrip:
+        flight:
+        search: DEBUG

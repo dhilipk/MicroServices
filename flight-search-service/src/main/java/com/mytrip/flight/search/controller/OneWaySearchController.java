@@ -6,8 +6,9 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.netflix.ribbon.RibbonClient;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,41 +24,33 @@ import com.mytrip.flight.search.service.OneWaySearchService;
 
 @RestController
 @RequestMapping(path = "/v1")
+@RibbonClient(name ="flight-fare-service")
 public class OneWaySearchController {
-
-    /**
-     * FARE Service application name which needs to be moved to Client Configuration
-     * TODO Move this name and calling URL to the client configuration
-     */
-    private static final String FARE_SERVICE = "flight-fare-service";
 
     private static final Logger LOGGER = LoggerFactory.getLogger(OneWaySearchController.class);
 
-    @Autowired
-    private DiscoveryClient discoveryClient;
+    @LoadBalanced
+    @Bean
+    public RestTemplate restTemplate(){
+      return new RestTemplate();
+    }
 
     @Autowired
     private OneWaySearchService oneWaySearchService;
+
+    @Autowired
+    private RestTemplate restTemplate;
 
     @RequestMapping(path = "/search/flights", method = RequestMethod.POST, 
             consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<FlightVo> search(@RequestBody SearchCriteria criteria) {
         LOGGER.debug(criteria.toString());
         List<FlightVo> flightVos = new LinkedList<>();
-        String restFareUri = null;
+        //TODO Move this as a client configuration
+        String restFareUri = "http://flight-fare-service/v1/fares";;
 
         List<Flight> flights = oneWaySearchService.search(criteria);
-        //TODO Move this to the flight-fare-client for any interaction with flight-fare-service
-        List<ServiceInstance> instances = discoveryClient.getInstances(FARE_SERVICE);
-        for (ServiceInstance serviceInstance : instances) {
-            LOGGER.debug("Service Instance : " + serviceInstance.getServiceId() + serviceInstance.getUri());
-            if(serviceInstance.getServiceId().equalsIgnoreCase(FARE_SERVICE)) {
-                restFareUri = serviceInstance.getUri().toString() + "/v1/fares";
-                break;
-            }
-        }
 
-        RestTemplate restTemplate = new RestTemplate();
         //TODO Check for getForEntity
         FareVo fareVo = restTemplate.getForObject(restFareUri, FareVo.class);
         FlightVo.FlightVoBuilder builder = FlightVo.builder();
