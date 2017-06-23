@@ -2,18 +2,14 @@ package com.mytrip.flight.fare.controller;
 
 import java.util.Calendar;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mytrip.common.vo.FareVo;
-import com.mytrip.flight.fare.constant.FlightFareConstants;
+import com.mytrip.flight.fare.FlightFareService;
 
-@RequestMapping(path = "/v1")
 @RestController
-public class FlightFareController {
+public class FlightFareController implements FlightFareService {
 
-    @RequestMapping(path = FlightFareConstants.URI_DATE_AND_FLIGHT_NUMBER, method = RequestMethod.GET)
     public FareVo getFareForFlightAndDate() {
         Calendar calendar = Calendar.getInstance();
         calendar.set(2017, 06, 20, 19, 30);

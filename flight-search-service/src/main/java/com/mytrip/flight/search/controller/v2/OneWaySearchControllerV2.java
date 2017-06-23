@@ -1,4 +1,4 @@
-package com.mytrip.flight.search.controller;
+package com.mytrip.flight.search.controller.v2;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -18,16 +18,17 @@ import org.springframework.web.client.RestTemplate;
 
 import com.mytrip.common.vo.FareVo;
 import com.mytrip.common.vo.FlightVo;
+import com.mytrip.flight.fare.FlightFareServiceClient;
 import com.mytrip.flight.search.criteria.SearchCriteria;
 import com.mytrip.flight.search.entity.Flight;
 import com.mytrip.flight.search.service.OneWaySearchService;
 
 @RestController
-@RequestMapping(path = "/v1")
+@RequestMapping(path = "/v2")
 @RibbonClient(name ="flight-fare-service")
-public class OneWaySearchController {
+public class OneWaySearchControllerV2 {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(OneWaySearchController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(OneWaySearchControllerV2.class);
 
     @LoadBalanced
     @Bean
@@ -39,20 +40,17 @@ public class OneWaySearchController {
     private OneWaySearchService oneWaySearchService;
 
     @Autowired
-    private RestTemplate restTemplate;
+    private FlightFareServiceClient flightFareServiceClient;
 
     @RequestMapping(path = "/search/flights", method = RequestMethod.POST, 
             consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<FlightVo> search(@RequestBody SearchCriteria criteria) {
         LOGGER.debug(criteria.toString());
         List<FlightVo> flightVos = new LinkedList<>();
-        //TODO Move this as a client configuration
-        String restFareUri = "http://flight-fare-service/v1/fares";
 
         List<Flight> flights = oneWaySearchService.search(criteria);
 
-        //TODO Check for getForEntity
-        FareVo fareVo = restTemplate.getForObject(restFareUri, FareVo.class);
+        FareVo fareVo = flightFareServiceClient.getFareForFlightAndDate();
         FlightVo.FlightVoBuilder builder = FlightVo.builder();
         for (Flight flight : flights) {
             flightVos.add(builder.flightDate(flight.getFlightDate())

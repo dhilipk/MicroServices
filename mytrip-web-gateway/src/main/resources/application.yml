@@ -17,11 +17,13 @@ zuul:
   routes:
     flight-fare-service:
       path: /flight-fare-service/**
-      url: http://localhost:8086
       service-id: FLIGHT-FARE-SERVICE
     support-service:
       path: /support-service/**
       url: http://localhost:8092
       service-id: SUPPORT-SERVICE
+    flight-search-service:
+      path: /flight-search-service/**
+      service-id: FLIGHT-SEARCH-SERVICE
     static:
       path: /static/**
