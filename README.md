@@ -29,16 +29,35 @@ This repository provides all the features which which has been fragmented into e
 - npm start
 - Open a browser and try to access http://localhost:8001/
 
-## Services Requirement
+## Common Definitions
+
+### Ribbon Components for load balancing
+Rule - a logic component to determine which server to return from a list
+Ping - a component running in background to ensure liveness of servers
+ServerList - this can be static or dynamic. If it is dynamic (as used by DynamicServerListLoadBalancer), a background thread will refresh and filter the list at certain interval
+
+### Zuul Main features
+- Provides a unified access to multiple different microservices
+- Hides internal details of the microservice ecosystem
+- Load balances across multiple service instances
+- Allowes access to services
+- Restricts access to internal only services
+- Looks up services from Eureka
+- Implements filters for authentication or logging purposes
+
+## Services Implementation
+
 ### mytrip-web-gateway
 Zuul API gateway integrated into spring cloud:
 - Service auto registration via eureka
 - Service registration by address
 - Service registration by service ID
 - Filters (logging, authentication)
-- Serving static content
 
 ### mytrip-registry-service
+- A microservice ecosystem may consist of a high number of services that need to know each other’s location. If we have multiple environments (dev, qa, uat, prod) then configuring all these services can be very time consuming and error prone.
+ - In a cloud environment the ip address and port of the services are not known in advance. Based on demand new service instances can be added or removed on the fly.
+ - Any microservice can be added to the using DiscoverEurekaClient, where the microservice is getting registered to the parent registry 
 ### flight-search-service
 ### flight-fare-service
 ### customer-information-service
