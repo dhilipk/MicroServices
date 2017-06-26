@@ -73,6 +73,16 @@ Zuul API gateway integrated into spring cloud:
 - Service registration by service ID
 - Filters (logging, authentication)
 
+### OAuth2 Four Roles
+- Resource owner:
+Could be you. An entity capable of granting access to a protected resource. When the resource owner is a person, it is referred to as an end-user.
+- Resource server:
+The server hosting the protected resources, capable of accepting and responding to protected resource requests using access tokens.
+- Client:
+An application making protected resource requests on behalf of the resource owner and with its authorization. It could be a mobile app asking your permission to access your Facebook feeds, a REST client trying to access REST API, a web site [Stackoverflow e.g.] providing an alternative login option using Facebook account.
+- Authorization server:
+The server issuing access tokens to the client after successfully authenticating the resource owner and obtaining authorization.
+
 ### mytrip-registry-service
 - A microservice ecosystem may consist of a high number of services that need to know each other’s location. If we have multiple environments (dev, qa, uat, prod) then configuring all these services can be very time consuming and error prone.
  - In a cloud environment the ip address and port of the services are not known in advance. Based on demand new service instances can be added or removed on the fly.
