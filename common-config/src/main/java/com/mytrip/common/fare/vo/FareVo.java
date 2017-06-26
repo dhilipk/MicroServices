@@ -1,4 +1,4 @@
-package com.mytrip.common.vo;
+package com.mytrip.common.fare.vo;
 
 import lombok.Data;
 

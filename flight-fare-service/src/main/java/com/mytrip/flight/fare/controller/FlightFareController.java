@@ -4,7 +4,7 @@ import java.util.Calendar;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mytrip.common.vo.FareVo;
+import com.mytrip.common.fare.vo.FareVo;
 import com.mytrip.flight.fare.FlightFareService;
 
 @RestController

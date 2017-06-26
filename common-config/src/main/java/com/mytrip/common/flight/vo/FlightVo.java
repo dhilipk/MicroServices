@@ -1,4 +1,4 @@
-package com.mytrip.common.vo;
+package com.mytrip.common.flight.vo;
 
 import lombok.Builder;
 import lombok.Getter;

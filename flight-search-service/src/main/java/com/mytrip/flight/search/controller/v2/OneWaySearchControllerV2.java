@@ -16,16 +16,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import com.mytrip.common.vo.FareVo;
-import com.mytrip.common.vo.FlightVo;
+import com.mytrip.common.fare.vo.FareVo;
+import com.mytrip.common.flight.vo.FlightVo;
 import com.mytrip.flight.fare.FlightFareServiceClient;
+import com.mytrip.flight.search.config.FlightSearchLoadBalancer;
 import com.mytrip.flight.search.criteria.SearchCriteria;
 import com.mytrip.flight.search.entity.Flight;
 import com.mytrip.flight.search.service.OneWaySearchService;
 
 @RestController
 @RequestMapping(path = "/v2")
-@RibbonClient(name ="flight-fare-service")
+@RibbonClient(name ="flight-fare-service", configuration = FlightSearchLoadBalancer.class)
 public class OneWaySearchControllerV2 {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(OneWaySearchControllerV2.class);
