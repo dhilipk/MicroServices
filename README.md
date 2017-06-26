@@ -53,6 +53,14 @@ This repository provides all the features which which has been fragmented into e
 
 Zuul / Consul has multiple components, but as a whole, it is a tool for discovering and configuring services in your infrastructure.
 
+### Consul
+In-order to get the consul dicovery services started download and get it installed in your machine. (https://www.consul.io)
+- To Run a consul agent >>consul agent -dev
+- Consul default takes 8500 port to start the services
+- To view the consul UI use -ui command. And use the below command to start the services. >>consul.exe agent -server -ui -bootstrap-expect=1 -data-dir=consul-data -bind=127.0.0.1
+- Consul UI URL (http://localhost:8500/ui)
+
+
 ## Services Implementation
 
 ### mytrip-web-gateway
