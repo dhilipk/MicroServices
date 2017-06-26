@@ -31,10 +31,26 @@ This repository provides all the features which which has been fragmented into e
 
 ## Common Definitions
 
+### Running Consul
+In-order to get the consul dicovery services started download and get it installed in your machine. (https://www.consul.io)
+- To Run a consul agent >>consul agent -dev
+- Consul default takes 8500 port to start the services
+- To view the consul UI use -ui command. And use the below command to start the services. >>consul.exe agent -server -ui -bootstrap-expect=1 -data-dir=consul-data -bind=127.0.0.1
+- Consul UI URL (http://localhost:8500/ui)
+
+### Running MongoDB
+To make few of the MongoDB specific microservices we need to start the MongoDB in the local instance using the command "C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --dbpath <PATH> (C:\Dhilip\Studies\MongoDBData)
+
+### Running Microservices
+- Our main method delegates to Spring Boot’s SpringApplication class by calling run. SpringApplication will bootstrap our application, starting Spring which will in turn start the auto-configured Tomcat web server. We need to pass <Module>Application.class as an argument to the run method to tell SpringApplication which is the primary Spring component. The args array is also passed through to expose any command-line arguments.
+- The @RequestMapping annotation provides “routing” information. It is telling Spring that any HTTP request with the path mapped to the method. 
+- The @RestController annotation tells Spring to render the resulting string directly back to the caller.
+- The @SpringBootApplication will be acted as a proxy for @Configuration, @EnableAutoConfiguration, @ComponentScan which will find the configurations in the application, finds the Entity items in the application, scans all the beans configured in the application respectively.
+
 ### Ribbon Components for load balancing
-Rule - a logic component to determine which server to return from a list
-Ping - a component running in background to ensure liveness of servers
-ServerList - this can be static or dynamic. If it is dynamic (as used by DynamicServerListLoadBalancer), a background thread will refresh and filter the list at certain interval
+- Rule -> a logic component to determine which server to return from a list (AvailabilityFilteringRule, RoundRobinRule, WeightedResponseTimeRule)
+- Ping -> a component running in background to ensure liveness of servers
+- ServerList -> this can be static or dynamic. If it is dynamic (as used by DynamicServerListLoadBalancer), a background thread will refresh and filter the list at certain interval using ServerListRefreshInterval. If it is static, list of load balancing ip address will be provided within listOfServers.
 
 ### Zuul Main features
 - Provides a unified access to multiple different microservices
@@ -44,6 +60,8 @@ ServerList - this can be static or dynamic. If it is dynamic (as used by Dynamic
 - Restricts access to internal only services
 - Looks up services from Eureka
 - Implements filters for authentication or logging purposes
+
+Zuul / Consul has multiple components, but as a whole, it is a tool for discovering and configuring services in your infrastructure.
 
 ## Services Implementation
 
