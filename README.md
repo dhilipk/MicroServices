@@ -31,6 +31,16 @@ This repository provides all the features which which has been fragmented into e
 
 ## Common Definitions
 
+### Running Consul
+In-order to get the consul dicovery services started download and get it installed in your machine. (https://www.consul.io)
+- To Run a consul agent >>consul agent -dev
+- Consul default takes 8500 port to start the services
+- To view the consul UI use -ui command. And use the below command to start the services. >>consul.exe agent -server -ui -bootstrap-expect=1 -data-dir=consul-data -bind=127.0.0.1
+- Consul UI URL (http://localhost:8500/ui)
+
+### Running MongoDB
+To make few of the MongoDB specific microservices we need to start the MongoDB in the local instance using the command "C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --dbpath <PATH> (C:\Dhilip\Studies\MongoDBData)
+
 ### Running Microservices
 - Our main method delegates to Spring Boot’s SpringApplication class by calling run. SpringApplication will bootstrap our application, starting Spring which will in turn start the auto-configured Tomcat web server. We need to pass <Module>Application.class as an argument to the run method to tell SpringApplication which is the primary Spring component. The args array is also passed through to expose any command-line arguments.
 - The @RequestMapping annotation provides “routing” information. It is telling Spring that any HTTP request with the path mapped to the method. 
@@ -52,14 +62,6 @@ This repository provides all the features which which has been fragmented into e
 - Implements filters for authentication or logging purposes
 
 Zuul / Consul has multiple components, but as a whole, it is a tool for discovering and configuring services in your infrastructure.
-
-### Consul
-In-order to get the consul dicovery services started download and get it installed in your machine. (https://www.consul.io)
-- To Run a consul agent >>consul agent -dev
-- Consul default takes 8500 port to start the services
-- To view the consul UI use -ui command. And use the below command to start the services. >>consul.exe agent -server -ui -bootstrap-expect=1 -data-dir=consul-data -bind=127.0.0.1
-- Consul UI URL (http://localhost:8500/ui)
-
 
 ## Services Implementation
 
