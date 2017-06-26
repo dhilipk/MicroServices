@@ -31,6 +31,12 @@ This repository provides all the features which which has been fragmented into e
 
 ## Common Definitions
 
+### Running Microservices
+- Our main method delegates to Spring Boot’s SpringApplication class by calling run. SpringApplication will bootstrap our application, starting Spring which will in turn start the auto-configured Tomcat web server. We need to pass <Module>Application.class as an argument to the run method to tell SpringApplication which is the primary Spring component. The args array is also passed through to expose any command-line arguments.
+- The @RequestMapping annotation provides “routing” information. It is telling Spring that any HTTP request with the path mapped to the method. 
+- The @RestController annotation tells Spring to render the resulting string directly back to the caller.
+- The @SpringBootApplication will be acted as a proxy for @Configuration, @EnableAutoConfiguration, @ComponentScan which will find the configurations in the application, finds the Entity items in the application, scans all the beans configured in the application respectively.
+
 ### Ribbon Components for load balancing
 - Rule -> a logic component to determine which server to return from a list (AvailabilityFilteringRule, RoundRobinRule, WeightedResponseTimeRule)
 - Ping -> a component running in background to ensure liveness of servers
