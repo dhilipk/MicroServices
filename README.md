@@ -42,6 +42,7 @@ In-order to get the consul dicovery services started download and get it install
 To make few of the MongoDB specific microservices we need to start the MongoDB in the local instance using the command "C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --dbpath <PATH> (C:\Dhilip\Studies\MongoDBData)
 
 ### Running Microservices
+- We can also use mvn command to start the spring boot services using >>mvn spring-boot:run
 - Our main method delegates to Spring Boot’s SpringApplication class by calling run. SpringApplication will bootstrap our application, starting Spring which will in turn start the auto-configured Tomcat web server. We need to pass <Module>Application.class as an argument to the run method to tell SpringApplication which is the primary Spring component. The args array is also passed through to expose any command-line arguments.
 - The @RequestMapping annotation provides “routing” information. It is telling Spring that any HTTP request with the path mapped to the method. 
 - The @RestController annotation tells Spring to render the resulting string directly back to the caller.
