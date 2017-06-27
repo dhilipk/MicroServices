@@ -11,4 +11,5 @@ public class MytripMobileGatewayApplication {
     public static void main(String[] args) {
         SpringApplication.run(MytripMobileGatewayApplication.class, args);
     }
+
 }
