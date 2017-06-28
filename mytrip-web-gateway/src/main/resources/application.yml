@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: zuul-server
+    name: mytrip-web-gateway
 
 #Eureka Configuration
 eureka:
@@ -11,19 +11,8 @@ eureka:
     service-url:
       defaultZone: http://localhost:8099/eureka
 
-#ZUUL Configuration
-zuul:
-  prefix: /api
+#Details which needs to be striped in Gateway. By default all the header informations will be blocked in Gateway.
+zuul: 
   routes:
-    flight-fare-service:
-      path: /flight-fare-service/**
-      service-id: FLIGHT-FARE-SERVICE
-    support-service:
-      path: /support-service/**
-      url: http://localhost:8092
-      service-id: SUPPORT-SERVICE
-    flight-search-service:
-      path: /flight-search-service/**
-      service-id: FLIGHT-SEARCH-SERVICE
-    static:
-      path: /static/**
+    mytrip-authentication-service:
+      sensitive-headers: 
