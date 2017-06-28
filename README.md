@@ -64,6 +64,22 @@ To make few of the MongoDB specific microservices we need to start the MongoDB i
 
 Zuul / Consul has multiple components, but as a whole, it is a tool for discovering and configuring services in your infrastructure.
 
+### OAuth2
+The OAuth 2.0 provider mechanism is responsible for exposing OAuth 2.0 protected resources. The configuration involves establishing the OAuth 2.0 clients that can access its protected resources independently or on behalf of a user.
+This example is based on the following resources:
+ - http://projects.spring.io/spring-security-oauth/docs/oauth2.html
+ 
+#### OAuth2 Four Roles
+- Resource owner: Could be you. An entity capable of granting access to a protected resource. When the resource owner is a person, it is referred to as an end-user.
+- Resource server: The server hosting the protected resources, capable of accepting and responding to protected resource requests using access tokens.
+- Client: An application making protected resource requests on behalf of the resource owner and with its authorization. It could be a mobile app asking your permission to access your Facebook feeds, a REST client trying to access REST API, a web site [Stackoverflow e.g.] providing an alternative login option using Facebook account.
+- Authorization server: The server issuing access tokens to the client after successfully authenticating the resource owner and obtaining authorization.
+
+#### OAuth2 Testing
+1. Obtain token with: `curl mytrip-client:password@localhost:9001/mytrip-authentication-service/oauth/token -d grant_type=client_credentials`
+2. Check the user endpoint with: $ `curl -H "Authorization: Bearer 640f0d0f-a820-41a8-883a-502510b56c71" -v localhost:9001/mytrip-authentication-service/user`
+3. Access the Resource with: `curl -H "Authorization: Bearer fd71538f-19ed-4465-9955-080deba461aa" -v localhost:8084/v1/notify/10`
+
 ## Services Implementation
 
 ### mytrip-web-gateway
@@ -72,16 +88,6 @@ Zuul API gateway integrated into spring cloud:
 - Service registration by address
 - Service registration by service ID
 - Filters (logging, authentication)
-
-### OAuth2 Four Roles
-- Resource owner:
-Could be you. An entity capable of granting access to a protected resource. When the resource owner is a person, it is referred to as an end-user.
-- Resource server:
-The server hosting the protected resources, capable of accepting and responding to protected resource requests using access tokens.
-- Client:
-An application making protected resource requests on behalf of the resource owner and with its authorization. It could be a mobile app asking your permission to access your Facebook feeds, a REST client trying to access REST API, a web site [Stackoverflow e.g.] providing an alternative login option using Facebook account.
-- Authorization server:
-The server issuing access tokens to the client after successfully authenticating the resource owner and obtaining authorization.
 
 ### mytrip-registry-service
 - A microservice ecosystem may consist of a high number of services that need to know each other’s location. If we have multiple environments (dev, qa, uat, prod) then configuring all these services can be very time consuming and error prone.
