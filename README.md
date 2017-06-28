@@ -68,6 +68,10 @@ Zuul / Consul has multiple components, but as a whole, it is a tool for discover
 The OAuth 2.0 provider mechanism is responsible for exposing OAuth 2.0 protected resources. The configuration involves establishing the OAuth 2.0 clients that can access its protected resources independently or on behalf of a user.
 This example is based on the following resources:
  - http://projects.spring.io/spring-security-oauth/docs/oauth2.html
+ - http://blog.trifork.com/2016/12/14/service-discovery-using-consul-and-spring-cloud/
+ - https://github.com/exteso/oauth2-step-by-step.git
+ - http://www.swisspush.org/security/2016/10/17/oauth2-in-depth-introduction-for-enterprises
+ - https://github.com/spring-guides/tut-spring-security-and-angular-js/tree/master/proxy
  
 #### OAuth2 Four Roles
 - Resource owner: Could be you. An entity capable of granting access to a protected resource. When the resource owner is a person, it is referred to as an end-user.
