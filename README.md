@@ -89,9 +89,7 @@ This example is based on the following resources:
 3. Access the Resource directly with: `curl -H "Authorization: Bearer fd71538f-19ed-4465-9955-080deba461aa" -v localhost:8084/v1/notify/10`
 4. Access the Resource using gateway with: `curl -H "Authorization: Bearer fd71538f-19ed-4465-9955-080deba461aa" -v localhost:9001/customer-notification-service/v1/notify/10`
 5. To generate the keystore: `keytool -genkeypair -alias jwt -keyalg RSA -dname "CN=jwt, OU=BFS, O=FreeLancer L=Chennai, S=TamilNadu, C=IN" -keypass mytripPass -keystore jwt.jks -storepass mytripPass`
-
-Now we can also save the TOKEN to a variable and then we can reuse it by using command:
-6. Copy the Token in a variable: `set TOKEN=<<TOKEN>>`
+6. Now we can also save the TOKEN to a variable and then we can reuse it by using command: `set TOKEN=<<TOKEN>>`
 7. Check the user endpoint with: `curl -H "Authorization: Bearer %TOKEN%" -v localhost:9001/mytrip-authentication-service/user`
 8. Access the Resource using gateway with: `curl -H "Authorization: Bearer %TOKEN%" -v localhost:9001/customer-notification-service/v1/notify/10`
 
