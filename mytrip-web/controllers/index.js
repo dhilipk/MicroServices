@@ -11,8 +11,8 @@ module.exports = function (router) {
         var indexModel = IndexModel(),
         flightsLeavingFrom = Promise.promisify(indexModel.flightsLeavingFrom);
         console.log("/");
-        flightsLeavingFrom(req).finally(function () {
-            res.render('index', indexModel);
+        flightsLeavingFrom(req).then(function () {
+            res.render('index', indexModel.model());
         });
     });
 

@@ -1,7 +1,6 @@
 {>"layouts/master" /}
 
 <div id="mytrip-landing-page-text" class="pull-left">
-    <h1>{@pre type="content" key="greeting"/}</h1>
     <div id="mytrip-flight-search" class="pull-left">
         <div class="hp-widget-top">
             <h1>
@@ -12,6 +11,7 @@
                 <input id="switch_input_2" class="switchBTN_toogle" checked="checked" type="radio" name="widgetOption" value="false">
                 round trip
             </h1>
+        {>"partials/search/domestic/leaving-from-data" /}
         {>"partials/search/domestic/leavingFrom" /}
         {>"partials/search/domestic/leavingTo" /}
         </div>

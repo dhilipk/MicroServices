@@ -13,8 +13,8 @@ var IndexModel = function() {
                 // parsed response body as js object 
                 console.log(data);
                 flightsLeavingData = data;
+                callback();
             });
-            callback();
         },
         model: function () {
             return {
