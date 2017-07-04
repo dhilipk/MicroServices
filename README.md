@@ -62,7 +62,11 @@ To make few of the MongoDB specific microservices we need to start the MongoDB i
 - Looks up services from Eureka
 - Implements filters for authentication or logging purposes
 
-Zuul / Consul has multiple components, but as a whole, it is a tool for discovering and configuring services in your infrastructure.
+Zuul / Consul has multiple components, but as a whole, it is a tool for discovering and configuring services in your infrastructure. Zuul has four standard filter types:
+- pre filters are executed before the request is routed
+- route filters can handle the actual routing of the request
+- post filters are executed after the request has been routed
+- error filters execute if an error occurs in the course of handling the request.
 
 ### OAuth2
 The OAuth 2.0 provider mechanism is responsible for exposing OAuth 2.0 protected resources. The configuration involves establishing the OAuth 2.0 clients that can access its protected resources independently or on behalf of a user.
