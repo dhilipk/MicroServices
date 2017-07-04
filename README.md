@@ -85,8 +85,17 @@ This example is based on the following resources:
 
 #### OAuth2 Testing
 1. Obtain token with: `curl mytrip-client:password@localhost:9001/mytrip-authentication-service/oauth/token -d grant_type=client_credentials`
-2. Check the user endpoint with: $ `curl -H "Authorization: Bearer 640f0d0f-a820-41a8-883a-502510b56c71" -v localhost:9001/mytrip-authentication-service/user`
-3. Access the Resource with: `curl -H "Authorization: Bearer fd71538f-19ed-4465-9955-080deba461aa" -v localhost:8084/v1/notify/10`
+2. Check the user endpoint with: `curl -H "Authorization: Bearer 640f0d0f-a820-41a8-883a-502510b56c71" -v localhost:9001/mytrip-authentication-service/user`
+3. Access the Resource directly with: `curl -H "Authorization: Bearer fd71538f-19ed-4465-9955-080deba461aa" -v localhost:8084/v1/notify/10`
+4. Access the Resource using gateway with: `curl -H "Authorization: Bearer fd71538f-19ed-4465-9955-080deba461aa" -v localhost:9001/customer-notification-service/v1/notify/10`
+5. To generate the keystore: `keytool -genkeypair -alias jwt -keyalg RSA -dname "CN=jwt, OU=BFS, O=FreeLancer L=Chennai, S=TamilNadu, C=IN" -keypass mytripPass -keystore jwt.jks -storepass mytripPass`
+
+Now we can also save the TOKEN to a variable and then we can reuse it by using command:
+6. Copy the Token in a variable: `set TOKEN=<<TOKEN>>`
+7. Check the user endpoint with: `curl -H "Authorization: Bearer %TOKEN%" -v localhost:9001/mytrip-authentication-service/user`
+8. Access the Resource using gateway with: `curl -H "Authorization: Bearer %TOKEN%" -v localhost:9001/customer-notification-service/v1/notify/10`
+
+@EnableGlobalMethodSecurity - which will help us to give access control to the access of the method using authorities.
 
 ## Services Implementation
 
