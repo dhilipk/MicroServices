@@ -42,6 +42,7 @@ In-order to get the consul dicovery services started download and get it install
 To make few of the MongoDB specific microservices we need to start the MongoDB in the local instance using the command "C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --dbpath <PATH> (C:\Dhilip\Studies\MongoDBData)
 
 ### Running Microservices
+- We can also use mvn command to start the spring boot services using >>mvn spring-boot:run
 - Our main method delegates to Spring Boot’s SpringApplication class by calling run. SpringApplication will bootstrap our application, starting Spring which will in turn start the auto-configured Tomcat web server. We need to pass <Module>Application.class as an argument to the run method to tell SpringApplication which is the primary Spring component. The args array is also passed through to expose any command-line arguments.
 - The @RequestMapping annotation provides “routing” information. It is telling Spring that any HTTP request with the path mapped to the method. 
 - The @RestController annotation tells Spring to render the resulting string directly back to the caller.
@@ -61,7 +62,38 @@ To make few of the MongoDB specific microservices we need to start the MongoDB i
 - Looks up services from Eureka
 - Implements filters for authentication or logging purposes
 
-Zuul / Consul has multiple components, but as a whole, it is a tool for discovering and configuring services in your infrastructure.
+Zuul / Consul has multiple components, but as a whole, it is a tool for discovering and configuring services in your infrastructure. Zuul has four standard filter types:
+- pre filters are executed before the request is routed
+- route filters can handle the actual routing of the request
+- post filters are executed after the request has been routed
+- error filters execute if an error occurs in the course of handling the request.
+
+### OAuth2
+The OAuth 2.0 provider mechanism is responsible for exposing OAuth 2.0 protected resources. The configuration involves establishing the OAuth 2.0 clients that can access its protected resources independently or on behalf of a user.
+This example is based on the following resources:
+ - http://projects.spring.io/spring-security-oauth/docs/oauth2.html
+ - http://blog.trifork.com/2016/12/14/service-discovery-using-consul-and-spring-cloud/
+ - https://github.com/exteso/oauth2-step-by-step.git
+ - http://www.swisspush.org/security/2016/10/17/oauth2-in-depth-introduction-for-enterprises
+ - https://github.com/spring-guides/tut-spring-security-and-angular-js/tree/master/proxy
+ 
+#### OAuth2 Four Roles
+- Resource owner: Could be you. An entity capable of granting access to a protected resource. When the resource owner is a person, it is referred to as an end-user.
+- Resource server: The server hosting the protected resources, capable of accepting and responding to protected resource requests using access tokens.
+- Client: An application making protected resource requests on behalf of the resource owner and with its authorization. It could be a mobile app asking your permission to access your Facebook feeds, a REST client trying to access REST API, a web site [Stackoverflow e.g.] providing an alternative login option using Facebook account.
+- Authorization server: The server issuing access tokens to the client after successfully authenticating the resource owner and obtaining authorization.
+
+#### OAuth2 Testing
+1. Obtain token with: `curl mytrip-client:password@localhost:9001/mytrip-authentication-service/oauth/token -d grant_type=client_credentials`
+2. Check the user endpoint with: `curl -H "Authorization: Bearer 640f0d0f-a820-41a8-883a-502510b56c71" -v localhost:9001/mytrip-authentication-service/user`
+3. Access the Resource directly with: `curl -H "Authorization: Bearer fd71538f-19ed-4465-9955-080deba461aa" -v localhost:8084/v1/notify/10`
+4. Access the Resource using gateway with: `curl -H "Authorization: Bearer fd71538f-19ed-4465-9955-080deba461aa" -v localhost:9001/customer-notification-service/v1/notify/10`
+5. To generate the keystore: `keytool -genkeypair -alias jwt -keyalg RSA -dname "CN=jwt, OU=BFS, O=FreeLancer L=Chennai, S=TamilNadu, C=IN" -keypass mytripPass -keystore jwt.jks -storepass mytripPass`
+6. Now we can also save the TOKEN to a variable and then we can reuse it by using command: `set TOKEN=<<TOKEN>>`
+7. Check the user endpoint with: `curl -H "Authorization: Bearer %TOKEN%" -v localhost:9001/mytrip-authentication-service/user`
+8. Access the Resource using gateway with: `curl -H "Authorization: Bearer %TOKEN%" -v localhost:9001/customer-notification-service/v1/notify/10`
+
+@EnableGlobalMethodSecurity - which will help us to give access control to the access of the method using authorities.
 
 ## Services Implementation
 
