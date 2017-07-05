@@ -37,6 +37,12 @@ In-order to get the consul dicovery services started download and get it install
 - Consul default takes 8500 port to start the services
 - To view the consul UI use -ui command. And use the below command to start the services. >>consul.exe agent -server -ui -bootstrap-expect=1 -data-dir=consul-data -bind=127.0.0.1
 - Consul UI URL (http://localhost:8500/ui)
+There are several important messages that consul agent outputs:
+1. Node name: This is a unique name for the agent. By default, this is the hostname of the machine, but you may customize it using the -node flag.
+2. Datacenter: This is the datacenter in which the agent is configured to run. Consul has first-class support for multiple datacenters; however, to work efficiently, each node must be configured to report its datacenter. The -datacenter flag can be used to set the datacenter. For single-DC configurations, the agent will default to "dc1".
+3. Server: This indicates whether the agent is running in server or client mode. Server nodes have the extra burden of participating in the consensus quorum, storing cluster state, and handling queries. Additionally, a server may be in "bootstrap" mode. Multiple servers cannot be in bootstrap mode as that would put the cluster in an inconsistent state.
+4. Client Addr: This is the address used for client interfaces to the agent. This includes the ports for the HTTP and DNS interfaces. By default, this binds only to localhost. If you change this address or port, you'll have to specify a -http-addr whenever you run commands such as consul members to indicate how to reach the agent. Other applications can also use the HTTP address and port to control Consul.
+5. Cluster Addr: This is the address and set of ports used for communication between Consul agents in a cluster. Not all Consul agents in a cluster have to use the same port, but this address MUST be reachable by all other nodes.
 
 ### Running MongoDB
 To make few of the MongoDB specific microservices we need to start the MongoDB in the local instance using the command "C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --dbpath <PATH> (C:\Dhilip\Studies\MongoDBData)
