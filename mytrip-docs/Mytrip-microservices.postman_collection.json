@@ -6,7 +6,7 @@
 	"folders": [
 		{
 			"id": "01a83d4b-cee4-d92d-d1ef-e261aeb18e00",
-			"name": "MyTrip",
+			"name": "MyTrip-Eureka-Services",
 			"description": "",
 			"order": [
 				"64dbbdb4-ebd9-7936-134a-25b2d758cc14",
@@ -16,81 +16,30 @@
 				"b0a07f4f-53e6-30c6-71ce-f77d5e4f888e",
 				"1cca113b-c69b-5ebc-071d-bedf4c18447d",
 				"e8e7f41e-543f-eaeb-dbef-ca3b39f30819",
-				"b9ffe57e-98f9-5a05-7ae2-3a446fd69921",
-				"799c280f-01ae-b403-1db9-f27bf4e8415c",
-				"13d9c970-1ee2-56a6-0bac-73aa12d4b27b",
-				"93dced74-0c55-94bc-cf3c-8a9e0fc428a4"
+				"b9ffe57e-98f9-5a05-7ae2-3a446fd69921"
 			],
 			"owner": 0,
-			"collectionId": "5906d8c3-7960-3bc0-44e8-95386f811500"
+			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41"
+		},
+		{
+			"id": "513d1aa0-2c4b-871c-f43e-0c4d635f9df2",
+			"name": "MyTrip-consul-Services",
+			"description": "",
+			"order": [
+				"45aa40c1-0ba1-8782-c474-2dba5254272f",
+				"67cbdda2-804a-b33b-c4b2-5b36a52bbe39",
+				"3d207a94-084d-a67f-90bc-2d6d771231e0",
+				"923f8a1b-0b4d-ed35-992b-29e4f7358739",
+				"b4574ebd-3600-9c2b-7be6-0777cb005b34"
+			],
+			"owner": 0,
+			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41"
 		}
 	],
 	"timestamp": 1498230294762,
 	"owner": 0,
 	"public": false,
 	"requests": [
-		{
-			"id": "13d9c970-1ee2-56a6-0bac-73aa12d4b27b",
-			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: Basic bXktdHJ1c3RlZC1jbGllbnQ6c2VjcmV0\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "Accept",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "Authorization",
-					"value": "Basic bXktdHJ1c3RlZC1jbGllbnQ6c2VjcmV0",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:9001/oauth/token?grant_type=refresh_token&refresh_token=9673905f-c75e-4435-a2cf-fac7310e288a",
-			"queryParams": [
-				{
-					"key": "grant_type",
-					"value": "refresh_token",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "refresh_token",
-					"value": "9673905f-c75e-4435-a2cf-fac7310e288a",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				}
-			],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
-			"data": [],
-			"dataMode": "raw",
-			"version": 2,
-			"tests": null,
-			"currentHelper": "basicAuth",
-			"helperAttributes": {
-				"id": "basic",
-				"username": "my-trusted-client",
-				"password": "secret",
-				"saveToRequest": true
-			},
-			"time": 1498558111154,
-			"name": "access_token - refresh_token",
-			"description": "",
-			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
-			"responses": [],
-			"rawModeData": ""
-		},
 		{
 			"id": "1cca113b-c69b-5ebc-071d-bedf4c18447d",
 			"headers": "Content-Type: application/json\nAccept: application/json\n",
@@ -108,7 +57,7 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:9000/api/support-service/v1/cities",
+			"url": "http://localhost:9000/support-service/v1/cities",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -120,7 +69,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1498557585888,
+			"time": 1499253051457,
 			"name": "FindAllCities-via Gateway",
 			"description": "",
 			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
@@ -162,6 +111,132 @@
 			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
 			"responses": [],
 			"rawModeData": "{\r\n\t\"originCity\": \"Chennai\",\r\n\t\"destinationCity\": \"Pune\",\r\n\t\"travelDate\": \"29/12/2017\"\r\n}"
+		},
+		{
+			"id": "3d207a94-084d-a67f-90bc-2d6d771231e0",
+			"headers": "Accept: application/json\nAuthorization: Basic bXktdHJ1c3RlZC1jbGllbnQ6c2VjcmV0\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic bXktdHJ1c3RlZC1jbGllbnQ6c2VjcmV0",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9001/city/capital?grant_type=password&access_token=9b5939db-e7f7-45c7-944e-bf6a3fe3d866",
+			"queryParams": [
+				{
+					"key": "grant_type",
+					"value": "password",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "access_token",
+					"value": "9b5939db-e7f7-45c7-944e-bf6a3fe3d866",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498563701845,
+			"name": "city/Capital",
+			"description": "",
+			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "93dced74-0c55-94bc-cf3c-8a9e0fc428a4",
+			"folder": "513d1aa0-2c4b-871c-f43e-0c4d635f9df2",
+			"rawModeData": "{\r\n\t\"originCity\": \"Chennai\",\r\n\t\"destinationCity\": \"Pune\",\r\n\t\"travelDate\": \"29/12/2017\"\r\n}"
+		},
+		{
+			"id": "45aa40c1-0ba1-8782-c474-2dba5254272f",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: Basic bXktdHJ1c3RlZC1jbGllbnQ6c2VjcmV0\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic bXktdHJ1c3RlZC1jbGllbnQ6c2VjcmV0",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9001/oauth/token?grant_type=password&username=dhilipk&password=abc123",
+			"queryParams": [
+				{
+					"key": "grant_type",
+					"value": "password",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "username",
+					"value": "dhilipk",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "abc123",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "my-trusted-client",
+				"password": "secret",
+				"saveToRequest": true
+			},
+			"time": 1498557700348,
+			"name": "access_token - mobile Gateway",
+			"description": "",
+			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "799c280f-01ae-b403-1db9-f27bf4e8415c",
+			"folder": "513d1aa0-2c4b-871c-f43e-0c4d635f9df2",
+			"rawModeData": ""
 		},
 		{
 			"id": "4674cc76-edeb-badd-a516-3dda90c76065",
@@ -236,7 +311,7 @@
 			"rawModeData": "{\r\n\t\"originCity\": \"MAA\",\r\n\t\"destinationCity\": \"PNQ\",\r\n\t\"travelDate\": \"29/12/2017\"\r\n}"
 		},
 		{
-			"id": "799c280f-01ae-b403-1db9-f27bf4e8415c",
+			"id": "67cbdda2-804a-b33b-c4b2-5b36a52bbe39",
 			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: Basic bXktdHJ1c3RlZC1jbGllbnQ6c2VjcmV0\n",
 			"headerData": [
 				{
@@ -258,25 +333,18 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:9001/oauth/token?grant_type=password&username=dhilipk&password=abc123",
+			"url": "http://localhost:9001/oauth/token?grant_type=refresh_token&refresh_token=9673905f-c75e-4435-a2cf-fac7310e288a",
 			"queryParams": [
 				{
 					"key": "grant_type",
-					"value": "password",
+					"value": "refresh_token",
 					"equals": true,
 					"description": "",
 					"enabled": true
 				},
 				{
-					"key": "username",
-					"value": "dhilipk",
-					"equals": true,
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "password",
-					"value": "abc123",
+					"key": "refresh_token",
+					"value": "9673905f-c75e-4435-a2cf-fac7310e288a",
 					"equals": true,
 					"description": "",
 					"enabled": true
@@ -297,17 +365,26 @@
 				"password": "secret",
 				"saveToRequest": true
 			},
-			"time": 1498557700348,
-			"name": "access_token - mobile Gateway",
+			"time": 1498558111154,
+			"name": "access_token - refresh_token",
 			"description": "",
 			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
 			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "13d9c970-1ee2-56a6-0bac-73aa12d4b27b",
+			"folder": "513d1aa0-2c4b-871c-f43e-0c4d635f9df2",
 			"rawModeData": ""
 		},
 		{
-			"id": "93dced74-0c55-94bc-cf3c-8a9e0fc428a4",
-			"headers": "Accept: application/json\nAuthorization: Basic bXktdHJ1c3RlZC1jbGllbnQ6c2VjcmV0\n",
+			"id": "923f8a1b-0b4d-ed35-992b-29e4f7358739",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: Basic bXl0cmlwLWNsaWVudDpwYXNzd29yZA==\n",
 			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
 				{
 					"key": "Accept",
 					"value": "application/json",
@@ -316,29 +393,43 @@
 				},
 				{
 					"key": "Authorization",
-					"value": "Basic bXktdHJ1c3RlZC1jbGllbnQ6c2VjcmV0",
+					"value": "Basic bXl0cmlwLWNsaWVudDpwYXNzd29yZA==",
 					"description": "",
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:9001/city/capital/",
-			"queryParams": [],
+			"url": "http://localhost:9001/mytrip-authentication-service/oauth/token?grant_type=client_credentials",
+			"queryParams": [
+				{
+					"key": "grant_type",
+					"value": "client_credentials",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
 			"preRequestScript": null,
 			"pathVariables": {},
 			"pathVariableData": [],
-			"method": "GET",
+			"method": "POST",
 			"data": [],
 			"dataMode": "raw",
 			"version": 2,
 			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1498559929298,
-			"name": "city/Capital",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "mytrip-client",
+				"password": "password",
+				"saveToRequest": true
+			},
+			"time": 1498636393444,
+			"name": "access-via Gateway",
 			"description": "",
 			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
 			"responses": [],
-			"rawModeData": "{\r\n\t\"originCity\": \"Chennai\",\r\n\t\"destinationCity\": \"Pune\",\r\n\t\"travelDate\": \"29/12/2017\"\r\n}"
+			"folder": "513d1aa0-2c4b-871c-f43e-0c4d635f9df2",
+			"rawModeData": ""
 		},
 		{
 			"id": "b0a07f4f-53e6-30c6-71ce-f77d5e4f888e",
@@ -377,8 +468,8 @@
 			"rawModeData": "{\r\n\t\"originCity\": \"Chennai\",\r\n\t\"destinationCity\": \"Pune\",\r\n\t\"travelDate\": \"29/12/2017\"\r\n}"
 		},
 		{
-			"id": "b9ffe57e-98f9-5a05-7ae2-3a446fd69921",
-			"headers": "Content-Type: application/json\nAccept: application/json\n",
+			"id": "b4574ebd-3600-9c2b-7be6-0777cb005b34",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: Basic bXl0cmlwLWNsaWVudDpwYXNzd29yZA==\n",
 			"headerData": [
 				{
 					"key": "Content-Type",
@@ -391,9 +482,73 @@
 					"value": "application/json",
 					"description": "",
 					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic bXl0cmlwLWNsaWVudDpwYXNzd29yZA==",
+					"description": "",
+					"enabled": true
 				}
 			],
-			"url": "http://localhost:9000/api/flight-search-service/v2/search/flights",
+			"url": "http://localhost:8096/oauth/token?grant_type=client_credentials",
+			"queryParams": [
+				{
+					"key": "grant_type",
+					"value": "client_credentials",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "mytrip-client",
+				"password": "password",
+				"saveToRequest": true
+			},
+			"time": 1498571415549,
+			"name": "access copy",
+			"description": "",
+			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "2616c037-08cd-973e-e77a-0fab3ddd1434",
+			"folder": "513d1aa0-2c4b-871c-f43e-0c4d635f9df2",
+			"rawModeData": ""
+		},
+		{
+			"id": "b9ffe57e-98f9-5a05-7ae2-3a446fd69921",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: Basic dGVtcG9yYXJ5OnRlbXBvcmFyeQ==\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic dGVtcG9yYXJ5OnRlbXBvcmFyeQ==",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9000/flight-search-service/v2/search/flights",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -403,9 +558,14 @@
 			"dataMode": "raw",
 			"version": 2,
 			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1498557554518,
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "temporary",
+				"password": "temporary",
+				"saveToRequest": true
+			},
+			"time": 1499252891191,
 			"name": "v2/Search-Flight-via Gateway",
 			"description": "",
 			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
@@ -465,7 +625,7 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:9000/api/flight-fare-service/v1/fares",
+			"url": "http://localhost:9000/flight-fare-service/v1/fares",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -477,7 +637,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1498557579554,
+			"time": 1499253033187,
 			"name": "GetFare-via Gateway",
 			"description": "",
 			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
