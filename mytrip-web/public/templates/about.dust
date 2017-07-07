@@ -1,6 +1,6 @@
 {>"layouts/master" /}
 
-<div id="mytrip-landing-page-text" class="pull-left">
+<div id="mytrip-about-page-text" class="pull-left">
     <h1>{@pre type="content" key="mytrip.about"/}</h1>
 </div>
 

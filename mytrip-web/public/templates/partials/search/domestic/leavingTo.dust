@@ -1,6 +1,6 @@
 
 {<cssFile}
-    <link rel="stylesheet" href="/css/search-flight.css"/>
+    <link rel="stylesheet" href="/css/app.css"/>
 {/cssFile}
 
 <div id="flight-search-leaving-to" class="dropdown" width="20%">

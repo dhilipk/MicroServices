@@ -13,10 +13,11 @@ requirejs.config({
     paths: {
         backbone: '../components/backbone/backbone-min',
         jquery: '../components/jquery/jquery-3.2.1.min',
+        jqueryUI: '../components/jquery-ui/jquery-ui.min',
         underscore: '../components/underscore/underscore-min',
         dust: '../components/dustjs-linkedin/dist/dust-full.min',
         handlebars: '../components/handlebars/handlebars-v2.0.0',
-        bootstrap: '../components/bootstrap/dist/js/bootstrap.min'
+        bootstrap: '../components/bootstrap-3.3.7/js/bootstrap.min'
     },
     shim: {
         backbone: {
@@ -25,10 +26,12 @@ requirejs.config({
         },
 
         bootstrap: {
+            deps: ['jquery', 'jqueryUI']
+        },
+        jqueryUI: {
             deps: ['jquery']
         },
-
-        'dust': {
+        dust: {
             exports: "dust"
         }
     }

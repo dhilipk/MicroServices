@@ -6,11 +6,11 @@
             <h1>
                 Book <a href="/flights">Domestic</a> and 
                 <a href="/international-flights">International</a> flights </br>
-                <input id="switch_input_1" class="switchBTN_toogle" type="radio" name="widgetOption" value="true">
-                one way
-                <input id="switch_input_2" class="switchBTN_toogle" checked="checked" type="radio" name="widgetOption" value="false">
-                round trip
             </h1>
+            <div class="radio">
+                <label><input type="radio" checked="checked" name="optradio">One Way</label>
+                <label><input type="radio" name="optradio">Round Trip</label>
+            </div>
         {>"partials/search/domestic/leaving-from-data" /}
         {>"partials/search/domestic/leavingFrom" /}
         {>"partials/search/domestic/leavingTo" /}

@@ -1,18 +1,20 @@
 'use strict';
 var Promise = require('bluebird'),
     IndexModel = require('../models/index'),
+    FlightModel = require('../models/customer/flightModel'),
     AboutModel = require('../models/general/about');
 
 module.exports = function (router) {
     require('./domesticSearch')(router);
+    require('./register')(router);
     var about = new AboutModel();
 
     router.get('/', function (req, res) {
-        var indexModel = IndexModel(),
-        flightsLeavingFrom = Promise.promisify(indexModel.flightsLeavingFrom);
+        var flightModel = FlightModel(),
+        flightsLeavingFrom = Promise.promisify(flightModel.flightsLeavingFrom);
         console.log("/");
         flightsLeavingFrom(req).then(function () {
-            res.render('index', indexModel.model());
+            res.render('index', flightModel.model());
         });
     });
 
