@@ -12,7 +12,7 @@ module.exports = {
     findAllCities: function (callback) {
         init();
         client.get("http://localhost:9000/support-service/v1/cities", function (data, response) {
-            callback(data);
+            callback(data, response.statusCode);
         });
     }
 };

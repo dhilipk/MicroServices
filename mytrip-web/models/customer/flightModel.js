@@ -3,7 +3,8 @@
 var supportServiceWrapper = require('../../lib/client-interaction/support-service-wrapper');
 
 module.exports = function FlightModel() {
-    var flightsLeavingData;
+    var flightsLeavingData,
+    flightsDestinationData;
 
     return {
         name: 'flight',
@@ -13,10 +14,21 @@ module.exports = function FlightModel() {
                 flightsLeavingData = responseData;
                 callback();
             });
+
+        },
+
+        flightsDestinationTo: function (request, callback) {
+            console.log("models/customer/flightModel->flightsDestinationTo");
+            supportServiceWrapper.findAllCities(function (responseData) {
+                flightsDestinationData = responseData;
+                callback();
+            });
+
         },
         model: function () {
             return {
-                flightsLeavingData: flightsLeavingData
+                flightsLeavingData: flightsLeavingData,
+                flightsDestinationData: flightsDestinationData
             };
         }
     };

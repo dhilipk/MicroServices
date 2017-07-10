@@ -11,10 +11,18 @@ module.exports = function (router) {
 
     router.get('/', function (req, res) {
         var flightModel = FlightModel(),
-        flightsLeavingFrom = Promise.promisify(flightModel.flightsLeavingFrom);
+        flightDetailsPromiseList = [
+            Promise.promisify(flightModel.flightsLeavingFrom)(req),
+            Promise.promisify(flightModel.flightsDestinationTo)(req),
+        ];
         console.log("/");
-        flightsLeavingFrom(req).then(function () {
+/*        flightsLeavingFrom(req).then(function () {
             res.render('index', flightModel.model());
+        });*/
+        Promise.settle(flightDetailsPromiseList).then(function () {
+            res.render('index', flightModel.model());
+        }).finally(function () {
+            console.log('finally block in controller/index');
         });
     });
 

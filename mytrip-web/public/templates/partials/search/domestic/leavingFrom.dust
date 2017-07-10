@@ -1,9 +1,0 @@
-            <div id="flight-search-leaving-from" class="dropdown" width="20%">
-                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Leaving From...
-                <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                <li><a href="#">Chennai (MAA)</a></li>
-                <li><a href="#">Pune (PNQ)</a></li>
-                <li><a href="#">Mumbai (BOM)</a></li>
-                </ul>
-            </div>

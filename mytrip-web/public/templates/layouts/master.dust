@@ -20,7 +20,7 @@
                 </nav>
             </div>
         </header>
-        <div id="wrapper">
+        <div id="mytrip-customer-body">
             {+body /}
         </div>
 		<div id="footer">

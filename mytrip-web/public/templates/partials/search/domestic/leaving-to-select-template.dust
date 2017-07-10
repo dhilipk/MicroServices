@@ -1,0 +1,15 @@
+<script id="mytrip-leaving-to-select-template" type="text/html">
+    <div id="flight-search-leaving-to" class="form-group" width="50%">
+        <label for="select-leaving-to">Leaving To:</label>
+        <select class="form-control" id="select-leaving-to">
+            <option value="">
+                {@pre type="content" key="leavingTo.dropDown.defaultOption" /}
+            </option>
+            {~lb}{~lb}#each cities{~rb}{~rb}
+                <option value={~lb}{~lb}id{~rb}{~rb}>
+                    {~lb}{~lb}name{~rb}{~rb} 
+                </option>
+            {~lb}{~lb}/each{~rb}{~rb}
+        </select>
+    </div>
+</script>
