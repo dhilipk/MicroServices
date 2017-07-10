@@ -2,7 +2,7 @@
 
 var express = require('express');
 var kraken = require('kraken-js');
-
+var mocks = require('./mocks');
 
 var options, app;
 
@@ -16,6 +16,7 @@ options = {
          * Add any additional config setup or overrides here. `config` is an initialized
          * `confit` (https://github.com/krakenjs/confit/) configuration object.
          */
+        mocks.configureMocks(config.get('mocks'));
         next(null, config);
     }
 };

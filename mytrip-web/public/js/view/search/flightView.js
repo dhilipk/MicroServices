@@ -12,32 +12,27 @@ define([
     searchFlightViewTemplate = Handlebars.compile($('#mytrip-leaving-from-select-template').html() || ''),
     leavingToSelectTemplate = Handlebars.compile($('#mytrip-leaving-to-select-template').html() || '');
     $('#mytrip-leaving-from-cities-container').html(searchFlightViewTemplate(data));
-            $('#mytrip-leaving-to-cities-container').html(leavingToSelectTemplate(flightsDestinationData));
-    var SearchFlightView = ModalView.extend({
-        attributes: {
-            template: searchFlightViewTemplate
-        },
-
-        initialize: function () {
-            ModalView.prototype.initialize.call(this);
-        },
-
-        render: function () {
-            ModalView.prototype.render.call(this);
-        },
-
+    $('#mytrip-leaving-to-cities-container').html(leavingToSelectTemplate(flightsDestinationData));
+    var SearchFlightView = Backbone.View.extend({
+        el: '#mytrip-flight-search',
         events: {
             'click .mytrip-select-travel-type': 'showReturnJourneySelectTemplate'
         },
 
-        showReturnJourneySelectTemplate: function () {
-            console.log('Return Retrieval');
+        initialize: function () {
+            console.log('initialize');
+            this.render();
         },
 
-        show: function () {
-            console.log("show function " + this.template());
-            if (this.template() !== '') {
-                ModalView.prototype.show.call(this);
+        render: function () {
+            $('#mytrip-leaving-to-cities-container').hide();
+        },
+
+        showReturnJourneySelectTemplate: function () {
+            if ($("input[name=mytrip-select-travel-type-name][value='Round Trip']").is(':checked')) {
+                $('#mytrip-leaving-to-cities-container').show();
+            } else {
+                $('#mytrip-leaving-to-cities-container').hide();
             }
         }
     });

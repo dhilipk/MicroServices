@@ -17,6 +17,10 @@ define(['jquery', 'backbone', 'landing'
             landing();
         },
 
+        showAbout: function () {
+            console.log("about page rendered");
+        },
+
         renderApplication: function() {
             console.log("renderApplication");
             /*var AboutView = landing.extend({

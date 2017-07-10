@@ -8,8 +8,8 @@
                 <a href="/international-flights">International</a> flights </br>
             </h1>
             <div class="radio mytrip-select-travel-type">
-                <label><input type="radio" checked="checked" name="optradio">One Way</label>
-                <label><input type="radio" name="optradio">Round Trip</label>
+                <label><input type="radio" checked="checked" name="mytrip-select-travel-type-name" value="One Way">One Way</label>
+                <label><input type="radio" name="mytrip-select-travel-type-name" value="Round Trip">Round Trip</label>
             </div>
         {>"partials/search/domestic/leaving-from-data" /}
         {>"partials/search/domestic/leaving-from-select-template" /}
@@ -19,7 +19,7 @@
         </div>
         <form id="mytrip-search-flights-form" action="/flight/domestic/search" method="post">
             <input type="hidden" name="_csrf" value="{_csrf}" />
-            <button type="button" class="btn btn-primary">
+            <button type="button" class="btn btn-primary mytrip-search-flight-confirm-btn">
                 {@pre type="content" key="button.submit" /}
             </button>
         </form>

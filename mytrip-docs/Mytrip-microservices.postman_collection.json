@@ -424,7 +424,7 @@
 				"saveToRequest": true
 			},
 			"time": 1498636393444,
-			"name": "access-via Gateway",
+			"name": "Grant-ClientCredentials-Access-via-Gateway",
 			"description": "",
 			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
 			"responses": [],
@@ -469,7 +469,7 @@
 		},
 		{
 			"id": "b4574ebd-3600-9c2b-7be6-0777cb005b34",
-			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: Basic bXl0cmlwLWNsaWVudDpwYXNzd29yZA==\n",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: Basic bXl0cmlwLXBhc3N3b3JkOnBhc3N3b3Jk\n",
 			"headerData": [
 				{
 					"key": "Content-Type",
@@ -485,16 +485,30 @@
 				},
 				{
 					"key": "Authorization",
-					"value": "Basic bXl0cmlwLWNsaWVudDpwYXNzd29yZA==",
+					"value": "Basic bXl0cmlwLXBhc3N3b3JkOnBhc3N3b3Jk",
 					"description": "",
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:8096/oauth/token?grant_type=client_credentials",
+			"url": "http://localhost:9001/mytrip-authentication-service/oauth/token?grant_type=password&username=dhilip&password=pass",
 			"queryParams": [
 				{
 					"key": "grant_type",
-					"value": "client_credentials",
+					"value": "password",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "username",
+					"value": "dhilip",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "pass",
 					"equals": true,
 					"description": "",
 					"enabled": true
@@ -511,18 +525,15 @@
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"id": "basic",
-				"username": "mytrip-client",
+				"username": "mytrip-password",
 				"password": "password",
 				"saveToRequest": true
 			},
-			"time": 1498571415549,
-			"name": "access copy",
+			"time": 1499425456314,
+			"name": "Grant-Password-Access-via-Gateway",
 			"description": "",
 			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
 			"responses": [],
-			"isFromCollection": true,
-			"collectionRequestId": "2616c037-08cd-973e-e77a-0fab3ddd1434",
-			"folder": "513d1aa0-2c4b-871c-f43e-0c4d635f9df2",
 			"rawModeData": ""
 		},
 		{
