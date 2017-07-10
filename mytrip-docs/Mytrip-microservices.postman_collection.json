@@ -1,0 +1,488 @@
+{
+	"id": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
+	"name": "Mytrip-microservices",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"id": "01a83d4b-cee4-d92d-d1ef-e261aeb18e00",
+			"name": "MyTrip",
+			"description": "",
+			"order": [
+				"64dbbdb4-ebd9-7936-134a-25b2d758cc14",
+				"4674cc76-edeb-badd-a516-3dda90c76065",
+				"ba261b86-9127-f1e4-404f-355c5c2b49ca",
+				"3abadeb1-f08d-3e0a-0dda-b33c9e93c612",
+				"b0a07f4f-53e6-30c6-71ce-f77d5e4f888e",
+				"1cca113b-c69b-5ebc-071d-bedf4c18447d",
+				"e8e7f41e-543f-eaeb-dbef-ca3b39f30819",
+				"b9ffe57e-98f9-5a05-7ae2-3a446fd69921",
+				"799c280f-01ae-b403-1db9-f27bf4e8415c",
+				"13d9c970-1ee2-56a6-0bac-73aa12d4b27b",
+				"93dced74-0c55-94bc-cf3c-8a9e0fc428a4"
+			],
+			"owner": 0,
+			"collectionId": "5906d8c3-7960-3bc0-44e8-95386f811500"
+		}
+	],
+	"timestamp": 1498230294762,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "13d9c970-1ee2-56a6-0bac-73aa12d4b27b",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: Basic bXktdHJ1c3RlZC1jbGllbnQ6c2VjcmV0\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic bXktdHJ1c3RlZC1jbGllbnQ6c2VjcmV0",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9001/oauth/token?grant_type=refresh_token&refresh_token=9673905f-c75e-4435-a2cf-fac7310e288a",
+			"queryParams": [
+				{
+					"key": "grant_type",
+					"value": "refresh_token",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "refresh_token",
+					"value": "9673905f-c75e-4435-a2cf-fac7310e288a",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "my-trusted-client",
+				"password": "secret",
+				"saveToRequest": true
+			},
+			"time": 1498558111154,
+			"name": "access_token - refresh_token",
+			"description": "",
+			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
+			"responses": [],
+			"rawModeData": ""
+		},
+		{
+			"id": "1cca113b-c69b-5ebc-071d-bedf4c18447d",
+			"headers": "Content-Type: application/json\nAccept: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9000/api/support-service/v1/cities",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498557585888,
+			"name": "FindAllCities-via Gateway",
+			"description": "",
+			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
+			"responses": [],
+			"rawModeData": "{\r\n\t\"originCity\": \"Chennai\",\r\n\t\"destinationCity\": \"Pune\",\r\n\t\"travelDate\": \"29/12/2017\"\r\n}"
+		},
+		{
+			"id": "3abadeb1-f08d-3e0a-0dda-b33c9e93c612",
+			"headers": "Content-Type: application/json\nAccept: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8092/v1/cities",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498557597457,
+			"name": "FindAllCities",
+			"description": "",
+			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
+			"responses": [],
+			"rawModeData": "{\r\n\t\"originCity\": \"Chennai\",\r\n\t\"destinationCity\": \"Pune\",\r\n\t\"travelDate\": \"29/12/2017\"\r\n}"
+		},
+		{
+			"id": "4674cc76-edeb-badd-a516-3dda90c76065",
+			"headers": "Content-Type: application/json\nAccept: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8087/v2/search/flights",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498557608630,
+			"name": "v2/Search-Flight",
+			"description": "",
+			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
+			"responses": [],
+			"rawModeData": "{\r\n\t\"originCity\": \"MAA\",\r\n\t\"destinationCity\": \"PNQ\",\r\n\t\"travelDate\": \"29/12/2017\"\r\n}"
+		},
+		{
+			"id": "64dbbdb4-ebd9-7936-134a-25b2d758cc14",
+			"headers": "Content-Type: application/json\nAccept: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8087/v1/search/flights",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498557614828,
+			"name": "v1/Search-Flight",
+			"description": "",
+			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
+			"responses": [],
+			"rawModeData": "{\r\n\t\"originCity\": \"MAA\",\r\n\t\"destinationCity\": \"PNQ\",\r\n\t\"travelDate\": \"29/12/2017\"\r\n}"
+		},
+		{
+			"id": "799c280f-01ae-b403-1db9-f27bf4e8415c",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: Basic bXktdHJ1c3RlZC1jbGllbnQ6c2VjcmV0\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic bXktdHJ1c3RlZC1jbGllbnQ6c2VjcmV0",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9001/oauth/token?grant_type=password&username=dhilipk&password=abc123",
+			"queryParams": [
+				{
+					"key": "grant_type",
+					"value": "password",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "username",
+					"value": "dhilipk",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "abc123",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"id": "basic",
+				"username": "my-trusted-client",
+				"password": "secret",
+				"saveToRequest": true
+			},
+			"time": 1498557700348,
+			"name": "access_token - mobile Gateway",
+			"description": "",
+			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
+			"responses": [],
+			"rawModeData": ""
+		},
+		{
+			"id": "93dced74-0c55-94bc-cf3c-8a9e0fc428a4",
+			"headers": "Accept: application/json\nAuthorization: Basic bXktdHJ1c3RlZC1jbGllbnQ6c2VjcmV0\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic bXktdHJ1c3RlZC1jbGllbnQ6c2VjcmV0",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9001/city/capital/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498559929298,
+			"name": "city/Capital",
+			"description": "",
+			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
+			"responses": [],
+			"rawModeData": "{\r\n\t\"originCity\": \"Chennai\",\r\n\t\"destinationCity\": \"Pune\",\r\n\t\"travelDate\": \"29/12/2017\"\r\n}"
+		},
+		{
+			"id": "b0a07f4f-53e6-30c6-71ce-f77d5e4f888e",
+			"headers": "Content-Type: application/json\nAccept: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8092/v1/cities/top",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498557592373,
+			"name": "FindTopCities",
+			"description": "",
+			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
+			"responses": [],
+			"rawModeData": "{\r\n\t\"originCity\": \"Chennai\",\r\n\t\"destinationCity\": \"Pune\",\r\n\t\"travelDate\": \"29/12/2017\"\r\n}"
+		},
+		{
+			"id": "b9ffe57e-98f9-5a05-7ae2-3a446fd69921",
+			"headers": "Content-Type: application/json\nAccept: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9000/api/flight-search-service/v2/search/flights",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498557554518,
+			"name": "v2/Search-Flight-via Gateway",
+			"description": "",
+			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
+			"responses": [],
+			"rawModeData": "{\r\n\t\"originCity\": \"MAA\",\r\n\t\"destinationCity\": \"PNQ\",\r\n\t\"travelDate\": \"29/12/2017\"\r\n}"
+		},
+		{
+			"id": "ba261b86-9127-f1e4-404f-355c5c2b49ca",
+			"headers": "Content-Type: application/json\nAccept: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8086/v1/fares",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498557602342,
+			"name": "Get-Fare",
+			"description": "",
+			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
+			"responses": [],
+			"rawModeData": "{\r\n\t\"originCity\": \"Chennai\",\r\n\t\"destinationCity\": \"Pune\",\r\n\t\"travelDate\": \"29/12/2017\"\r\n}"
+		},
+		{
+			"id": "e8e7f41e-543f-eaeb-dbef-ca3b39f30819",
+			"headers": "Content-Type: application/json\nAccept: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9000/api/flight-fare-service/v1/fares",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498557579554,
+			"name": "GetFare-via Gateway",
+			"description": "",
+			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
+			"responses": [],
+			"rawModeData": "{\r\n\t\"originCity\": \"Chennai\",\r\n\t\"destinationCity\": \"Pune\",\r\n\t\"travelDate\": \"29/12/2017\"\r\n}"
+		}
+	]
+}

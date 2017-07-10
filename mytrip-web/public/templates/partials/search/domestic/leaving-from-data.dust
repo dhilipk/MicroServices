@@ -1,0 +1,3 @@
+<script type="application/json" id="mytrip-leaving-from-data">
+    {flightsLeavingData|js|s}
+</script>

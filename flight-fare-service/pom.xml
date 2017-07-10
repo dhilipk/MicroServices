@@ -50,6 +50,11 @@
             <artifactId>common-config</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+        	<groupId>com.mytrip.flight</groupId>
+        	<artifactId>flight-fare-interface</artifactId>
+        	<version>0.0.1-SNAPSHOT</version>
+        </dependency>
 	</dependencies>
 
 	<build>
