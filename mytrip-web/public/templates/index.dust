@@ -11,11 +11,11 @@
                 <label><input type="radio" checked="checked" name="mytrip-select-travel-type-name" value="One Way">One Way</label>
                 <label><input type="radio" name="mytrip-select-travel-type-name" value="Round Trip">Round Trip</label>
             </div>
-        {>"partials/search/domestic/leaving-from-data" /}
-        {>"partials/search/domestic/leaving-from-select-template" /}
-        {>"partials/search/domestic/leaving-to-data" /}
-        {>"partials/search/domestic/leaving-to-select-template" /}
-        {>"partials/search/domestic/leaving-select-template" /}
+        {>"partials/search/leaving-from-data" /}
+        {>"partials/search/leaving-from-select-template" /}
+        {>"partials/search/leaving-to-data" /}
+        {>"partials/search/leaving-to-select-template" /}
+        {>"partials/search/leaving-select-template" /}
         {>"partials/common/date-picker" /}
         <form id="mytrip-search-flights-form" role="form" action="/search/flight/domestic" method="post">
             <input type="hidden" name="_csrf" value="{_csrf}" />

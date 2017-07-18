@@ -1,10 +1,12 @@
 'use strict';
 
-var supportServiceWrapper = require('../../lib/client-interaction/support-service-wrapper');
+var supportServiceWrapper = require('../../lib/client-interaction/support-service-wrapper'),
+    searchServiceWrapper = require('../../lib/client-interaction/search-service-wrapper');
 
 module.exports = function FlightModel() {
     var flightsLeavingData,
-    flightsDestinationData;
+        flightsDestinationData,
+        flightSearchDetails;
 
     return {
         name: 'flight',
@@ -25,10 +27,17 @@ module.exports = function FlightModel() {
             });
 
         },
+        searchDomesticFlight: function(request, callback) {
+            searchServiceWrapper.searchFlights(request.body.searchDomesticFlightDetails, function(responseData) {
+                flightSearchDetails = responseData;
+                callback();
+            });
+        },
         model: function () {
             return {
                 flightsLeavingData: flightsLeavingData,
-                flightsDestinationData: flightsDestinationData
+                flightsDestinationData: flightsDestinationData,
+                flightSearchDetails: flightSearchDetails
             };
         }
     };

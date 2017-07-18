@@ -22,7 +22,8 @@
     },
 
     "mocks": {
-        "SupportService": true
+        "SupportService": true,
+        "SearchService": true
     },
 
     "middleware": {

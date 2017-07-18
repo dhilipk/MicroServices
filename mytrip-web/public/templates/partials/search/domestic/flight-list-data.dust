@@ -1,0 +1,3 @@
+<script type="application/json" id="mytrip-flight-search-details-data">
+    {flightSearchDetails|js|s}
+</script>

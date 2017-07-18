@@ -5,8 +5,10 @@ var Promise = require('bluebird'),
 
 module.exports = function (router) {
     router.post('/search/flight/domestic', function (req, res) {
-        var flightModel = FlightModel();
-        console.log("/search/flight/domestic");
-        res.render('flight-search', flightModel);
+        var flightModel = FlightModel(),
+        flightsLeavingFrom = Promise.promisify(flightModel.searchDomesticFlight);
+        flightsLeavingFrom(req).then(function () {
+            res.render('flight-search', flightModel.model());
+        });
     });
 };

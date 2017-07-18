@@ -23,6 +23,11 @@
         <div id="mytrip-customer-body">
             {+body /}
         </div>
+        <div id="footer">
+			<ul>
+				<li>MyTyip v.{base.appVersion} </li>
+			</ul>
+		</div>
         <script data-main="/js/config" src="/components/requirejs/require.js"></script>
 
         {>"partials/common/modal" /}

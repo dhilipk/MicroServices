@@ -1,1 +1,4 @@
 {>"layouts/master" /}
+<div id="mytrip-flight-search-details" class="pull-left">
+</div>
+{>"partials/search/domestic/flight-list-data" /}

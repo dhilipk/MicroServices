@@ -1,7 +1,8 @@
 'use strict';
 
 var mockery = require('mockery'),
-    SupportServiceMock = require('./support-service');
+    SupportServiceMock = require('./support-service'),
+    SearchServiceMock = require('./search-service');
 
 module.exports.enableMocks = function () {
     mockery.enable({
@@ -13,6 +14,10 @@ module.exports.enableMocks = function () {
 
 module.exports.mockForSupportService = function() {
     mockery.registerMock('../../lib/client-interaction/support-service-wrapper', SupportServiceMock);
+}
+
+module.exports.mockForSearchService = function() {
+    mockery.registerMock('../../lib/client-interaction/search-service-wrapper', SearchServiceMock);
 }
 
 module.exports.configureMocks = function (conf) {
