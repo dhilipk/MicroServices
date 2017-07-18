@@ -1,9 +1,12 @@
 'use strict';
 
-var Promise = require('bluebird');
+var Promise = require('bluebird'),
+    FlightModel = require('../models/customer/flightModel');
 
 module.exports = function (router) {
-    router.get('/search/flight/domestic', function (req, res) {
+    router.post('/search/flight/domestic', function (req, res) {
+        var flightModel = FlightModel();
         console.log("/search/flight/domestic");
+        res.render('flight-search', flightModel);
     });
 };

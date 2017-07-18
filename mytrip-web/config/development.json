@@ -22,7 +22,7 @@
     },
 
     "mocks": {
-        "SupportService": false
+        "SupportService": true
     },
 
     "middleware": {

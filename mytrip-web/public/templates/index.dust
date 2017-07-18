@@ -16,9 +16,10 @@
         {>"partials/search/domestic/leaving-to-data" /}
         {>"partials/search/domestic/leaving-to-select-template" /}
         {>"partials/search/domestic/leaving-select-template" /}
-        </div>
-        <form id="mytrip-search-flights-form" action="/flight/domestic/search" method="post">
+        {>"partials/common/date-picker" /}
+        <form id="mytrip-search-flights-form" role="form" action="/search/flight/domestic" method="post">
             <input type="hidden" name="_csrf" value="{_csrf}" />
+            <input type="hidden" name="searchDomesticFlightDetails" id="search-domestic-flight-details" />
             <button type="button" class="btn btn-primary mytrip-search-flight-confirm-btn">
                 {@pre type="content" key="button.submit" /}
             </button>

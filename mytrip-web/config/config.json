@@ -6,9 +6,7 @@
         "view engine": "js",
         "views": "path:./.build/templates"
     },
-    
 
-    
     "view engines": {
         "js": {
             "module": "makara",
@@ -23,14 +21,10 @@
 
     "dust": {
         "helpers": [
-    
             "dust-makara-helpers"
-    
         ]
     },
-    
 
-    
     "i18n": {
         "contentPath": "path:./locales",
         "fallback": "en-US"
@@ -41,8 +35,6 @@
     },
 
     "middleware": {
-
-        
         "makara": {
             "priority": 100,
             "enabled": true,

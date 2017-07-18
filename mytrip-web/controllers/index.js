@@ -16,9 +16,6 @@ module.exports = function (router) {
             Promise.promisify(flightModel.flightsDestinationTo)(req),
         ];
         console.log("/");
-/*        flightsLeavingFrom(req).then(function () {
-            res.render('index', flightModel.model());
-        });*/
         Promise.settle(flightDetailsPromiseList).then(function () {
             res.render('index', flightModel.model());
         }).finally(function () {

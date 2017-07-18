@@ -1,6 +1,6 @@
 <script id="mytrip-leaving-to-select-template" type="text/html">
-    <div id="flight-search-leaving-to" class="form-group" width="50%">
-        <label for="select-leaving-to">Leaving To:</label>
+    <div id="flight-search-leaving-to" class="form-group">
+        <label for="select-leaving-to">{@pre type="content" key="leavingTo.label" /}</label>
         <select class="form-control" id="select-leaving-to">
             <option value="">
                 {@pre type="content" key="leavingTo.dropDown.defaultOption" /}

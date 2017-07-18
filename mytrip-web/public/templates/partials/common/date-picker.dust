@@ -1,0 +1,28 @@
+
+<!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+<div class="span5 col-md-5" id="sandbox-container">
+    <label class="control-label " for="departing-on">Departing on</label>
+    <div class="input-group date">
+        <input type="text" class="form-control" id="departing-on" name="departing-on" readonly="readonly"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+    </div>
+</div>
+
+<!-- Extra JavaScript/CSS added manually in "Settings" tab -->
+<!-- Include jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Include Date Range Picker -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+<script>
+    $('#sandbox-container .input-group.date').datepicker({
+        format: 'mm/dd/yyyy',
+        startDate: "now",
+        clearBtn: true,
+        orientation: "bottom left",
+        daysOfWeekHighlighted: "0,6",
+        todayHighlight: true,
+        autoclose: true
+});
+</script>

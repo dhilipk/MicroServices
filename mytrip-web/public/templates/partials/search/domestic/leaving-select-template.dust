@@ -1,4 +1,6 @@
-<div id="mytrip-leaving-from-cities-container" width="50%">
-</div>
-<div id="mytrip-leaving-to-cities-container" width="50%">
+<div id="mytrip-leaving-cities-container" class="book-trip-flight-airport">
+    <div id="mytrip-leaving-from-cities-container" class="flight-depart">
+    </div>
+    <div id="mytrip-leaving-to-cities-container" class="flight-destination">
+    </div>
 </div>

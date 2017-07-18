@@ -1,0 +1,7 @@
+{
+    "cities": [{
+        "id": 1,
+        "name": "Chennai",
+        "code": "MAA"
+    }]
+}

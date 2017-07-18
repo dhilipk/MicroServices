@@ -1,6 +1,7 @@
 'use strict';
 
-var mockery = require('mockery');
+var mockery = require('mockery'),
+    SupportServiceMock = require('./support-service');
 
 module.exports.enableMocks = function () {
     mockery.enable({
@@ -10,14 +11,18 @@ module.exports.enableMocks = function () {
     });
 }
 
+module.exports.mockForSupportService = function() {
+    mockery.registerMock('../../lib/client-interaction/support-service-wrapper', SupportServiceMock);
+}
+
 module.exports.configureMocks = function (conf) {
     var Mocks = module.exports;
     if (conf) {
         Mocks.enableMocks();
         Object.keys(conf).forEach(function (key) {
             if (conf[key] === true) {
-                if (Mocks['createMock' + key]) {
-                    Mocks['createMock' + key]();
+                if (Mocks['mockFor' + key]) {
+                    Mocks['mockFor' + key]();
                 }
             }
         });
