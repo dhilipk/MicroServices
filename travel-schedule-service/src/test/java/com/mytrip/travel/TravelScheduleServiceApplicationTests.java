@@ -1,4 +1,4 @@
-package com.mytrip.travel.information;
+package com.mytrip.travel;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

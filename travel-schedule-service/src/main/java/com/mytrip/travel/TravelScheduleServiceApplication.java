@@ -1,4 +1,4 @@
-package com.mytrip.travel.information;
+package com.mytrip.travel;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
