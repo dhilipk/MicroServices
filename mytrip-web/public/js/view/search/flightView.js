@@ -7,14 +7,8 @@ define([
     'handlebars',
     'view/common/modalView'
 ], function($, Backbone, Handlebars, ModalView) {
-    var data = JSON.parse($('#mytrip-leaving-from-data').html() || ''),
-    flightsDestinationData = JSON.parse($('#mytrip-leaving-to-data').html() || '{}'),
-    searchFlightViewTemplate = Handlebars.compile($('#mytrip-leaving-from-select-template').html() || ''),
-    leavingToSelectTemplate = Handlebars.compile($('#mytrip-leaving-to-select-template').html() || '');
-    $('#mytrip-leaving-from-cities-container').html(searchFlightViewTemplate(data)),
-    flightSearchDetails = {};
-    $('#mytrip-leaving-to-cities-container').html(leavingToSelectTemplate(flightsDestinationData));
-    var SearchFlightView = Backbone.View.extend({
+    var flightSearchDetails = {},
+        SearchFlightView = Backbone.View.extend({
         el: '#mytrip-flight-search',
         events: {
             'click .mytrip-select-travel-type': 'showReturnJourneySelectTemplate',
@@ -22,7 +16,13 @@ define([
         },
 
         initialize: function () {
-            console.log('initialize');
+            console.log('initialize: SearchFlightView');
+            var data = JSON.parse($('#mytrip-leaving-from-data').html() || ''),
+                flightsDestinationData = JSON.parse($('#mytrip-leaving-to-data').html() || '{}'),
+                searchFlightViewTemplate = Handlebars.compile($('#mytrip-leaving-from-select-template').html() || ''),
+                leavingToSelectTemplate = Handlebars.compile($('#mytrip-leaving-to-select-template').html() || '');
+            $('#mytrip-leaving-from-cities-container').html(searchFlightViewTemplate(data));
+            $('#mytrip-leaving-to-cities-container').html(leavingToSelectTemplate(flightsDestinationData));
             this.render();
         },
 

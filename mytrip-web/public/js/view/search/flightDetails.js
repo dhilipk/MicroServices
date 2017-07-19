@@ -7,11 +7,13 @@ define([
     'handlebars',
     'view/common/modalView'
 ], function($, Backbone, Handlebars, ModalView) {
-    var FlightDetailsView = Backbone.View.extend({
-        el: '#mytrip-flight-search-details',
-
-        initialize: function () {
-            console.log('initialize');
-        }
-    });
+    return function () {
+        var FlightDetailsView = Backbone.View.extend({
+            initialize: function () {
+                console.log('initialize: FlightDetailsView');
+            }
+        });
+        return new FlightDetailsView;
+    };
+    
 });

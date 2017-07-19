@@ -9,4 +9,7 @@ define(['jquery', 'backbone', 'router'/* Dependencies */,
     });
 
     var router = new Router();
+    Backbone.history.start({
+        pushState: true
+    });
 });
