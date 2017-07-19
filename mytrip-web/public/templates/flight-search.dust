@@ -1,4 +1,54 @@
 {>"layouts/master" /}
-<div id="mytrip-flight-search-details" class="pull-left">
-</div>
-{>"partials/search/domestic/flight-list-data" /}
+{<body}
+    <div id="mytrip-flight-search-details" class="pull-left container">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#flight-details">Flight details</a></li>
+            <li><a data-toggle="tab" href="#fare-details">Fare details</a></li>
+            <li><a data-toggle="tab" href="#baggage-details">Baggage details</a></li>
+            <li><a data-toggle="tab" href="#cancellation-fee">Cancellation fee</a></li>
+            <li><a data-toggle="tab" href="#date-change-fee">Date change fee</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="flight-details" class="tab-pane fade in active">
+                <table class="table table-condensed">
+                    <thead>
+                    <tr>
+                        <th>Flight Inforamtion</th>
+                        <th>Date of Travel</th>
+                        <th>Price</th>
+                        <th><th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>IndiGo 6E 311</td>
+                        <td>29/12/2017</td>
+                        <td>200</td>
+                        <td><button id="book-flight-1">Book</button>
+                    </tr>
+                    <tr>
+                        <td>IndiGo 6E 311</td>
+                        <td>29/12/2017</td>
+                        <td>200</td>
+                        <td><button id="book-flight-1">Book</button>
+                    </tr>
+                    <tr>
+                        <td>IndiGo 6E 311</td>
+                        <td>29/12/2017</td>
+                        <td>200</td>
+                        <td><button id="book-flight-1">Book</button>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {>"partials/search/domestic/flight-list-data" /}
+    <form id="mytrip-flight-book-form" action="/book/flight/domestic" method="post">
+        <input type="hidden" name="_csrf" value="{_csrf}" />
+        <input type="hidden" name="flightBookingDetails" id="flight-booking-details" />
+        <button type="button" class="btn btn-primary mytrip-search-flight-confirm-btn">
+            {@pre type="content" key="button.submit" /}
+        </button>
+    </form>
+{/body}

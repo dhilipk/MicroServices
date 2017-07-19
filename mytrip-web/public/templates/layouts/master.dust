@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body>
-        <header class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <header class="navbar navbar-default navbar-static-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="/">MyTrip Booking - using Backbone.js</a>
@@ -23,11 +23,6 @@
         <div id="mytrip-customer-body">
             {+body /}
         </div>
-        <div id="footer">
-			<ul>
-				<li>MyTyip v.{base.appVersion} </li>
-			</ul>
-		</div>
         <script data-main="/js/config" src="/components/requirejs/require.js"></script>
 
         {>"partials/common/modal" /}

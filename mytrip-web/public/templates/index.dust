@@ -1,5 +1,5 @@
 {>"layouts/master" /}
-
+{<body}
 <div id="mytrip-landing-page-text" class="pull-left">
     <div id="mytrip-flight-search" class="pull-left">
         <div class="hp-widget-top">
@@ -26,3 +26,4 @@
         </form>
     </div>
 </div>
+{/body}
