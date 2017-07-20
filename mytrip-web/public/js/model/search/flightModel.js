@@ -5,7 +5,9 @@ define(['backbone'], function (Backbone) {
             serviceProvider: undefined,
             flightNumber: undefined,
             destinationCity: undefined,
-            originCity: undefined
+            originCity: undefined,
+            dateOfTravel: undefined,
+            price: undefined
         },
         idAttribute: 'ID'
     });

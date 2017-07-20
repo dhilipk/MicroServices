@@ -1,9 +1,9 @@
-[
-    {
+{
+    "flightDetails": [{
         "flightNumber": "6E 311",
         "originCity": "MAA",
         "destinationCity": "PNQ",
         "flightDate": "29/12/2017",
         "fareAmount": "200"
-    }
-]
+    }]
+}

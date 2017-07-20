@@ -33,6 +33,9 @@ requirejs.config({
         },
         dust: {
             exports: "dust"
+        },
+        underscore: {
+            exports: '_'
         }
     }
 });

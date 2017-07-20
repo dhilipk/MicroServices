@@ -1,15 +1,28 @@
 <script id="mytrip-flight-list-template" type="text/html">
-    <div id="flight-search-list" class="form-group">
-        <label for="select-leaving-from">{@pre type="content" key="leavingFrom.label" /}</label>
-        <select class="form-control" id="select-leaving-from">
-            <option value="">
-                {@pre type="content" key="leavingFrom.dropDown.defaultOption" /}
-            </option>
-            {~lb}{~lb}#each cities{~rb}{~rb}
-                <option value={~lb}{~lb}id{~rb}{~rb}>
-                    {~lb}{~lb}name{~rb}{~rb} 
-                </option>
-            {~lb}{~lb}/each{~rb}{~rb}
-        </select>
+    <div id="flight-search-list" class="tab-pane fade in active">
+        <table class="table table-condensed">
+            <thead>
+            <tr>
+                <th>Flight Inforamtion</th>
+                <th>Date of Travel</th>
+                <th>Price</th>
+                <th><th>
+            </tr>
+            </thead>
+            <tbody>
+                {~lb}{~lb}#each flightDetails{~rb}{~rb}
+                <tr>
+                    <td>{~lb}{~lb}ID{~rb}{~rb}</td>
+                    <td>{~lb}{~lb}flightDate{~rb}{~rb} </td>
+                    <td>{~lb}{~lb}fareAmount{~rb}{~rb} </td>
+                    <td>
+                        <button type="button" class="btn btn-primary mytrip-search-flight-confirm-btn">
+                            {@pre type="content" key="button.submit" /}
+                        </button>
+                    </td>
+                </tr>
+                {~lb}{~lb}/each{~rb}{~rb}
+            </tbody>
+        </table>
     </div>
 </script>
