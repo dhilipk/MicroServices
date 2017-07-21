@@ -23,7 +23,8 @@
 
     "mocks": {
         "SupportService": true,
-        "SearchService": true
+        "SearchService": true,
+        "TravelScheduleService": true
     },
 
     "middleware": {

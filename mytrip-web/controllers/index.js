@@ -5,7 +5,7 @@ var Promise = require('bluebird'),
     AboutModel = require('../models/general/about');
 
 module.exports = function (router) {
-    require('./domesticSearch')(router);
+    require('./domestic')(router);
     require('./register')(router);
     var about = new AboutModel();
 

@@ -11,4 +11,12 @@ module.exports = function (router) {
             res.render('flight-search', flightModel.model());
         });
     });
+
+    router.post('/book/flight/domestic', function (req, res) {
+        var flightModel = FlightModel(),
+        flightsLeavingFrom = Promise.promisify(flightModel.bookDomesticFlight);
+        flightsLeavingFrom(req).then(function () {
+            res.render('flight-confirm', flightModel.model());
+        });
+    });
 };

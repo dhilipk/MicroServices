@@ -1,7 +1,8 @@
 'use strict';
 
 var supportServiceWrapper = require('../../lib/client-interaction/support-service-wrapper'),
-    searchServiceWrapper = require('../../lib/client-interaction/search-service-wrapper');
+    searchServiceWrapper = require('../../lib/client-interaction/search-service-wrapper'),
+    travelScheduleServiceWrapper = require('../../lib/client-interaction/travel-schedule-service-wrapper');
 
 module.exports = function FlightModel() {
     var flightsLeavingData,
@@ -25,14 +26,21 @@ module.exports = function FlightModel() {
                 flightsDestinationData = responseData;
                 callback();
             });
-
         },
+
         searchDomesticFlight: function(request, callback) {
             searchServiceWrapper.searchFlights(request.body.searchDomesticFlightDetails, function(responseData) {
                 flightSearchDetails = responseData;
                 callback();
             });
         },
+
+        bookDomesticFlight: function (request, callback) {
+            travelScheduleServiceWrapper.bookFlight(request.body.flightBookingDetails, function (err, responseData) {
+                callback();
+            });
+        },
+
         model: function () {
             return {
                 flightsLeavingData: flightsLeavingData,

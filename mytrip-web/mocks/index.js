@@ -2,7 +2,8 @@
 
 var mockery = require('mockery'),
     SupportServiceMock = require('./support-service'),
-    SearchServiceMock = require('./search-service');
+    SearchServiceMock = require('./search-service'),
+    TravelScheduleServiceMock = require('./travel-schedule-service');
 
 module.exports.enableMocks = function () {
     mockery.enable({
@@ -18,6 +19,10 @@ module.exports.mockForSupportService = function() {
 
 module.exports.mockForSearchService = function() {
     mockery.registerMock('../../lib/client-interaction/search-service-wrapper', SearchServiceMock);
+}
+
+module.exports.mockForTravelScheduleService = function() {
+    mockery.registerMock('../../lib/client-interaction/travel-schedule-service-wrapper', TravelScheduleServiceMock);
 }
 
 module.exports.configureMocks = function (conf) {
