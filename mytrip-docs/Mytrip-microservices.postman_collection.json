@@ -16,7 +16,10 @@
 				"b0a07f4f-53e6-30c6-71ce-f77d5e4f888e",
 				"1cca113b-c69b-5ebc-071d-bedf4c18447d",
 				"e8e7f41e-543f-eaeb-dbef-ca3b39f30819",
-				"b9ffe57e-98f9-5a05-7ae2-3a446fd69921"
+				"b9ffe57e-98f9-5a05-7ae2-3a446fd69921",
+				"3b00e704-e388-9ac2-5516-9a5547f658b0",
+				"0e7de769-1409-dff4-87ee-901d2e488894",
+				"5fa606bf-2b2c-5c47-4d58-2b794221c884"
 			],
 			"owner": 0,
 			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41"
@@ -36,10 +39,56 @@
 			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41"
 		}
 	],
+	"folders_order": [
+		"01a83d4b-cee4-d92d-d1ef-e261aeb18e00",
+		"513d1aa0-2c4b-871c-f43e-0c4d635f9df2"
+	],
 	"timestamp": 1498230294762,
 	"owner": 0,
 	"public": false,
 	"requests": [
+		{
+			"id": "0e7de769-1409-dff4-87ee-901d2e488894",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: Basic bXl0cmlwLWNsaWVudDpwYXNzd29yZA==\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic bXl0cmlwLWNsaWVudDpwYXNzd29yZA==",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8094/v1/book/flight/domestic",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1502098625880,
+			"name": "flight-booking",
+			"description": "",
+			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
+			"responses": [],
+			"rawModeData": "{\r\n\t\"originCity\": \"MAA\",\r\n\t\"destinationCity\": \"PNQ\",\r\n\t\"travelDate\": \"29/12/2017\"\r\n}"
+		},
 		{
 			"id": "1cca113b-c69b-5ebc-071d-bedf4c18447d",
 			"headers": "Content-Type: application/json\nAccept: application/json\n",
@@ -111,6 +160,48 @@
 			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
 			"responses": [],
 			"rawModeData": "{\r\n\t\"originCity\": \"Chennai\",\r\n\t\"destinationCity\": \"Pune\",\r\n\t\"travelDate\": \"29/12/2017\"\r\n}"
+		},
+		{
+			"id": "3b00e704-e388-9ac2-5516-9a5547f658b0",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: Basic bXl0cmlwLWNsaWVudDpwYXNzd29yZA==\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic bXl0cmlwLWNsaWVudDpwYXNzd29yZA==",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:9000/travel-schedule-service/v1/book/flight/domestic",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500473459297,
+			"name": "flight-booking via Gateway",
+			"description": "",
+			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
+			"responses": [],
+			"rawModeData": "{\r\n\t\"originCity\": \"MAA\",\r\n\t\"destinationCity\": \"PNQ\",\r\n\t\"travelDate\": \"29/12/2017\"\r\n}"
 		},
 		{
 			"id": "3d207a94-084d-a67f-90bc-2d6d771231e0",
@@ -273,6 +364,48 @@
 			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
 			"responses": [],
 			"rawModeData": "{\r\n\t\"originCity\": \"MAA\",\r\n\t\"destinationCity\": \"PNQ\",\r\n\t\"travelDate\": \"29/12/2017\"\r\n}"
+		},
+		{
+			"id": "5fa606bf-2b2c-5c47-4d58-2b794221c884",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: Basic bXl0cmlwLWNsaWVudDpwYXNzd29yZA==\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic bXl0cmlwLWNsaWVudDpwYXNzd29yZA==",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8084/v1/notify/customer",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1502099018313,
+			"name": "notify-customer",
+			"description": "",
+			"collectionId": "aa694b5b-39a6-96ab-5c5f-aa0e01107a41",
+			"responses": [],
+			"rawModeData": "{\r\n\t\"customerId\": \"2328789888984\",\r\n\t\"confirmationNumber\": \"P3442KSST\",\r\n\t\"pnr\": \"P3442KSST\",\r\n\t\"flightNumber\": \"4E G187\",\r\n\t\"dateOfTravel\": \"29/12/2017\"\r\n}"
 		},
 		{
 			"id": "64dbbdb4-ebd9-7936-134a-25b2d758cc14",
