@@ -7,7 +7,9 @@ This repository provides all the features which which has been fragmented into e
 3. MongoDB 3.4
 4. npm 4.4.4
 5. grunt-cli v1.2.0
-5. sts-3.8.4 or Eclipse IDE
+6. Apache ZooKeeper (https://zookeeper.apache.org/releases.html)
+7. Apache Kafka (http://kafka.apache.org/downloads)
+6. sts-3.8.4 or Eclipse IDE
 
 ## Getting Started
 
@@ -102,6 +104,10 @@ Now we can also save the TOKEN to a variable and then we can reuse it by using c
 8. Access the Resource using gateway with: `curl -H "Authorization: Bearer %TOKEN%" -v localhost:9001/customer-notification-service/v1/notify/10`
 
 @EnableGlobalMethodSecurity - which will help us to give access control to the access of the method using authorities.
+
+### Spring Kafka Configuration
+https://www.codenotfound.com/spring-kafka/
+https://www.codenotfound.com/spring-kafka-spring-integration-example.html
 
 ## Services Implementation
 
