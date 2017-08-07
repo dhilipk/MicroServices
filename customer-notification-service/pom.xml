@@ -37,20 +37,25 @@
 		</dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+            <!-- <artifactId>spring-cloud-starter-consul-discovery</artifactId> -->
         </dependency>
         <dependency>
-        	<groupId>com.mytrip.microservices</groupId>
-        	<artifactId>common-config</artifactId>
-        	<version>0.0.1-SNAPSHOT</version>
+            <groupId>com.mytrip.microservices</groupId>
+            <artifactId>common-config</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <dependency>
-        	<groupId>org.springframework.security.oauth</groupId>
-        	<artifactId>spring-security-oauth2</artifactId>
-        </dependency>
+        <!-- <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2</artifactId>
+        </dependency> -->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-jwt</artifactId>
+        </dependency>
+        <dependency>
+        	<groupId>org.springframework.kafka</groupId>
+        	<artifactId>spring-kafka</artifactId>
         </dependency>
 	</dependencies>
 

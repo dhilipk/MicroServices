@@ -32,7 +32,7 @@ public class CityInfoController {
     @RequestMapping(path = "/v1/cities")
     public Map<String, List<City>> getAllCities() {
         Map<String, List<City>> topCities = new HashMap<>();
-        topCities.put("cities", (List<City>)cityRepository.findAll());
+        topCities.put("cities", (List<City>) cityRepository.findAll());
         return topCities;
     }
 
